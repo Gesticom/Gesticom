@@ -27,6 +27,7 @@
 					<nav>
 	            	</nav>
                             <!-- prueba3 -->
+                            <!-- prueba Luis-->
                    	<ol class="breadcrumb">
                             <div id="idioma"> <span class="fa fa-flag"><a href="index.jsp">    Espa�ol</a><a href="indexIngles.jsp"> / English</a> </div>
                             <!-- <li><a href="#">Inicio</a></li> -->
