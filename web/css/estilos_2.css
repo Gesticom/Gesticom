@@ -1,0 +1,403 @@
+@charset "utf-8";
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	width: 1000px;
+	margin: auto;
+}
+#logo{
+	margin: auto;
+	margin-top:0px;
+	height: 120px;
+	width: 200px;
+	text-align: center;
+	background-color: black;
+	float:left;
+
+}
+#baner{
+	margin:auto;
+	margin-top:0px;
+	height:100px;
+	width:800px;
+	text-align: center;
+	background-color:black;
+	float: left;
+}
+#error404{
+	margin:auto;
+	margin-top:20px;
+	margin-left:250px;
+	height:320px;
+	width:500px;
+	text-align: center;
+	background-color:white;
+	float: left;
+}
+
+#paginaerror404{
+	margin:auto;
+	margin-top:60px;
+	margin-left:100px;
+	height:350px;
+	width:450px;
+	text-align: center;
+	background-color:black;
+	float: left;
+}
+
+
+
+#idioma{
+	height:30px;
+	width:220px;
+	text-align: left;
+	float: left;
+}
+#usuario{
+	margin-top:0px;
+	margin-right:0px;
+	height:30px;
+	width:300px;
+	text-align: right;
+	float: right;
+}
+
+#contenido{
+	margin:auto;
+	margin-left:0px;
+	height:390px;
+	width:1000px;
+	background-color:silver;
+	float: left;
+
+
+}
+
+#header {
+
+	margin-left:0px;
+	width:1000px;
+	font-family: neuropolitical;
+}
+
+ul, ol {
+	list-style:none;
+}
+
+.nav > li a:hover{
+	background-color:#434343;
+}		
+
+
+.nav > li {
+	float:left;
+}
+
+.nav li a {
+	background-color:#000;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 15px;
+	display:block;
+	transition: all 2s;/* para que halla un efecto*/
+
+}
+.nav > li {
+	float:left;
+
+}
+.nav li ul {
+	display:none;
+	position:absolute;
+	min-width:150px;
+}
+
+.nav li:hover > ul {
+	display:block;
+}
+
+.nav li ul il {
+	position:relative;
+}
+
+.nav li ul il ul{
+	right:-140px;
+	top:0px;
+}
+
+#breadcrumb{
+	margin-left:0px;
+}
+
+section{
+	margin: auto;
+	margin-top:0px;
+	height: 270px;
+	width: 730px;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjOWU5ZTllIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=");
+	text-align: center;
+}
+
+#pie{
+    margin-top: 40px;
+    height: 25px;
+    width: 1000px;
+    text-align: center;
+    line-height: 40px;
+    border-top: 3px solid black;
+}
+
+#iconos{
+    margin-top: 0px;
+    height: 20px;
+    width: 1000px;
+    text-align: center;
+    line-height: 40px;
+}
+section{
+	width:100%;
+	height:100%
+}
+
+#registro{
+	width:700px;
+	height:250px;
+	margin:auto;
+	margin-top:10px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+}
+
+#registro td:first-child{
+	width: 250px;
+}
+
+#solicitud{
+	width:600px;
+	height:290px;
+	margin:auto;
+	margin-top:10px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+}
+
+#profesional{
+	width:600px;
+	height:290px;
+	margin:auto;
+	margin-top:10px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+}
+#Usuarios1{
+	width:850px;
+	height:300px;
+	margin:auto;
+	margin-top:0px;
+	padding: 0px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+}
+#Ciudades{
+	width:550px;
+	height:300px;
+	margin:auto;
+	margin-top:10px;
+        padding-top: 80px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+}
+#Solicitudes{
+	width:650px;
+	height:300px;
+	margin:auto;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+}
+#formularioSolicitudes{
+    	width:650px;
+	height:300px;
+	margin:auto;
+	margin-top:10px;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-bottom: 50px;
+        padding-left: 0px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+
+}
+
+#personal{
+	width:750px;
+	height:300px;
+	margin:auto;
+	margin-top:10px;
+	padding: 1px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+}
+#Competencia{
+
+	margin:auto;
+	margin-left:20px;
+	height:275px;
+	width:560px;
+	background-color:silver;
+}
+#Botones{
+	margin:auto;
+	margin-left:20px;
+	height:0px;
+	width:560px;
+	background-color:silver;
+}
+
+#Grafica{
+	margin-top:30px;
+	margin-left:0px;
+	height:0px;
+	width:0px;
+	background-color:red;
+	margin-left:600px;
+
+}
+
+#radio{
+    margin:auto;
+    margin-left:130px;
+    height:50px;
+    width:700px;
+	padding: 5px;
+	background-color: rgba(255,255,255,0.7); /* rgb + alpha = opacidad */
+	border-radius: 15px 15px 0 0;
+
+  }
+label{
+	width: 200px;
+	text-align: right;
+	display: inline-block; /* Aparece en línea pero ocupando espacio de un bloque */
+	margin: 5px 0 5px 0; /* Separación arriba y abajo de 15px con los elementos aledaños */
+}
+/* Adición de un asterísco después de cada elemento label*/
+Esto influye en los label generados como mensajes de validación, por lo que DEBE BORRARSE de allí 
+label2:after{
+	content: "*"; 
+	color: red;
+	padding: 5px;
+} 
+/* Estilos del elemento donde se generarán los mensajes de validación. Prueba otras opciones de visualización!!! */
+label.error {
+	color: #900;
+	font-style: italic;
+	font-size: 0.8em;
+	font-weight: normal;
+	text-align: left;
+	padding-left: 5px;
+}
+/* propiedades que se aplican a todos los objetos INPUT, si se desea delimitar solo a unos, se especifica el objeto padre ej: #formularioRegistro input */
+input{
+	padding-left: 5px;
+	border: 1px solid #AAA;
+	margin-top: 3px;
+}
+/* Estilos de input al ser catalogado como invalido o erróneo. Pruebe otras opciones de visualización!!! */
+input.error{
+	background-color: #FEE;
+	border: 1px solid #933;
+}
+/* Estilos de input al ser catalogado como valido. Pruebe otras opciones de visualización!!! */
+input.valid{
+	background-color: #EFE;
+	border: 1px solid #393;
+}
+input[type="radio"]{
+	margin:auto;
+	width: 30px;
+	height: 15px;
+}
+ul, ol {
+	list-style:none;
+}
+
+
+//html, body{
+//  margin:0;
+//  padding:0;
+//  height:100%;
+//}
+/*section {
+    position: relative;
+    border: 1px solid #000;
+    padding-top: 37px;
+    background: #000;
+}*/
+section.positioned {
+
+  position: absolute;
+  top:100px;
+  left:270px;
+  width:730px;
+  box-shadow: 0 0 15px #333;
+}
+.container {
+    overflow-y: auto;
+    height: 360px;
+    width:930px;
+    font-style: italic;
+    font-size: 0.4em;
+    font-weight: 500;
+
+}
+table {
+  border-spacing: 0;
+  width:100%;
+
+   /* font-size: 11px;
+    font-weight: normal;*/
+}
+td + td {
+  border-left:1px solid #eee;
+}
+td, th {
+  border-bottom:1px solid #eee;
+  background: #ddd;
+  color: #000;
+  padding: 1px 25px;
+}
+th {
+  height: 0;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: transparent;
+  border: none;
+  white-space: nowrap;
+}
+th div{
+  position: absolute;
+  background: transparent;
+  color: #fff;
+  padding: 9px 25px;
+  top: 0;
+  margin-left: -25px;
+  line-height: normal;
+  border-left: 1px solid #00f;
+}
+th:first-child div{
+  border: none;
+}

@@ -1,0 +1,140 @@
+<html><!-- InstanceBegin template="../Templates/Gesticom.dwt" codeOutsideHTMLIsLocked="false" -->
+	<head>
+        <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="viewport" content="width=device-width, initial-scale=1" >
+            
+		    
+            <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+            <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+            <link rel="stylesheet" type="text/css" href="css/estilos.css">
+		    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico">
+            
+
+			<!-- InstanceBeginEditable name="doctitle" -->
+		    <title>Interfaz de Usuario</title>
+		    <!-- InstanceEndEditable -->
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.js"></script>
+		<script type="text/javascript" src="js/additional-methods.js"></script>
+		<!-- InstanceBeginEditable name="head" -->
+		<!-- InstanceEndEditable -->
+	</head>
+	<body>
+		<main>
+			<div id="logo"><h1> <IMG SRC="imagenes/gesticom.png" height="140" width="140"></h1></div>
+			<div id="baner"><h1> <IMG SRC="imagenes/baner.png" height="160" width="760"></h1></div>
+			<div id="contenido">	
+				<div id="header">
+					<ul class="nav">
+				        <li><i class="fa-li fa fa-check-square"></i><a href="usuarios.html">Usuarios</a>
+                            <ul>
+                                <li><i class="fa fa-flag fa-stack-1x fa-inverse"></i><a href="usuariosCrear.html">Creacion</a></li>	
+                                <li><a href="BorrarUsuarios.html">Borrar</a></li>	
+                                <li><a href="usuarios.html">Editar</a></li>
+	                        </ul>
+                        </li>
+				        <li><a href="campanas.html">Campañas</a></li>
+ 				        <li><a href="solicitudempleados.html">Solicitud</a></li>
+				        <li><a href="profesional.html">Profesional</a></li>
+				        <li><a href="competencias.html">Competencias</a></li>
+	            	</ul>
+                  </div>
+					<section>
+					<!-- InstanceBeginEditable name="EditRegionSection" -->
+					<ol class="breadcrumb">
+					<!-- <li><a href="#">Inicio</a></li> -->
+  					<li class="active">Login</li>
+					</ol>
+					<section>
+	                  <form id="formularioRegistro" method="post" action="../css/bootstrap.css">
+	                        <div id="registro">
+		                        <h3>Login</h3>
+                            	<table class="table table-bordered table-striped" border=3>
+		                        	<td><label for="nombreusuario">Nombre Usuario0000:</label>
+		                        	<td><input type="text" name="nombreusuario" id="nombreusuario" placeholder="Juan" maxlength="16" required tabindex="1"></td><tr>
+		                        	<td><label for="clave">Digite su contraseña:</label>
+		                        	<td><input name="clave" id="clave" type="password" tabindex="2" required></td><tr>
+	                        	</table>
+                               <a href="solicitudempleados.html">Usuario nuevo</a>
+
+	                        </div>
+							<div id="radio">
+                                Acceso Temporal:<br>
+                                <label1 class="radio-inline" for="admin">Administrador
+                                <input name="rol" type="radio" required id="admin" tabindex="3" value="admin" checked>
+                            	</label1>
+                                <label1 class="radio-inline" for="sup">Supervisor
+                                <input type="radio" name="rol" id="sup" value="sup" required>
+                                </label1>
+                                <label1 class="radio-inline" for="usu">Usuario
+                                <input type="radio" name="rol" id="usu" value="usu" required>
+                                </label1>
+                                    
+                          		<p style="text-align: center; margin: 20px;"><button type="submit" class="btn btn-success boton" onclick="escogeperfil()" tabindex="4">Iniciar Sesión</button></p>
+							</div>
+
+	                        <script>
+								function escogeperfil(){
+									if(document.getElementById("admin").checked){
+									document.getElementById("formularioRegistro").action="inicioAdmin.html";
+									}
+									if(document.getElementById("sup").checked){
+									document.getElementById("formularioRegistro").action="inicioSupervisor.html";
+									}
+									if(document.getElementById("usu").checked){
+									document.getElementById("formularioRegistro").action="inicioUsuario.html";
+									}
+								}
+
+
+	                        </script>
+	               			
+	                   </form>
+					</section>
+                    <main>	
+                    <script>
+                        $().ready(function() {
+                            $("#formularioRegistro").validate({ 
+                                rules: {
+                                    nombreusuario: {
+                                        required: true,
+                                        minlength: 3,
+                                        maxlength: 15
+                                    },
+                                    clave: {
+                                        required: true,
+                                        minlength: 5
+                                    }
+                                }, 
+            
+                                // Mensajes a generar para indicar al usuario la estructura valida que debe ingresar. Se debe indicar por cada regla adicionada anteriormente para sobre escribir los mensajes por defecto (los cuales están en inglés. Se encuentran en "jquery.validate.js" línea 308)
+                                messages: {
+                                    nombreusuario: {
+                                        required: "Campo requerido",
+                                        minlength: "Mínimo {0} caracteres",
+                                        maxlength: "Maximo {0} caracteres"
+                                    },
+                                    clave: {
+                                        required: "Campo requerido",
+                                        minlength: "Mínimo {0} caracteres",
+                                    }
+                                } // Cierre de los mensajes
+                            }); // Cierre de la función validate
+                        }); // Cierre de la función ready
+                        
+                        // NOTA: Revise el archivo "additional-methods" (ya enlazado arriba), para obtener otros métodos de validación como "lettersonly" básico para el trabajo de su sistema de información
+            
+                    </script>
+					<!-- InstanceEndEditable -->
+
+					</section>
+   
+					<div id="pie"><a href="AboutGesticom.html">Versión 1.0 | COPYRIGHT  	&copy;2014 GESTICOM | Contáctenos: 3133163023</a></div>
+                    <div id="iconos">Siguenos también en  <IMG SRC="imagenes/iconos.png" height="30" width="116"></div>
+ 
+			</div>
+		<main>	
+	</body>
+<!-- InstanceEnd --></html>
