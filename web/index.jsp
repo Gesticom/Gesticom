@@ -26,7 +26,7 @@
 			<div id="contenido">	
 					<nav>
 	            	</nav>
-                            <!-- prueba2 -->
+                            <!-- prueba3 -->
                    	<ol class="breadcrumb">
                             <div id="idioma"> <span class="fa fa-flag"><a href="index.jsp">    Espa�ol</a><a href="indexIngles.jsp"> / English</a> </div>
                             <!-- <li><a href="#">Inicio</a></li> -->
