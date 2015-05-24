@@ -11,6 +11,9 @@ package Modelo;
  */
 public class UsuarioDTO {
 
+    public UsuarioDTO() {
+    }
+
     private long Id_Usuario;
     private int TipoDocumento;
     private String Usuario;
@@ -25,9 +28,10 @@ public class UsuarioDTO {
     private int Cargo;
     private int Role;
     private String Contrasena;
+    private String Email;
 
 
-    public UsuarioDTO(int Id_Usuario, int TipoDocumento, String Usuario, String Nombres, String Apellidos, String FechaDeNacimiento, String LugarDeNacimiento, String Direccion, String TelefonoFijo, String Celular, int Ciudad, int Cargo, int Role, String Contrasena) {
+    public UsuarioDTO(int Id_Usuario, int TipoDocumento, String Usuario, String Nombres, String Apellidos, String FechaDeNacimiento, String LugarDeNacimiento, String Direccion, String TelefonoFijo, String Celular, int Ciudad, int Cargo, int Role, String Contrasena, String Email) {
         this.Id_Usuario = Id_Usuario;
         this.TipoDocumento = TipoDocumento;
         this.Usuario = Usuario;
@@ -42,10 +46,7 @@ public class UsuarioDTO {
         this.Cargo = Cargo;
         this.Role = Role;
         this.Contrasena = Contrasena;
-
-    }
-
-    public UsuarioDTO() {
+        this.Email = Email;
 
     }
 
@@ -246,9 +247,18 @@ public class UsuarioDTO {
     }
 
     /**
-     * @return the Id_Usuario
+     * @return the Email
      */
+    public String getEmail() {
+        return Email;
+    }
+
     /**
-     * @return the Nombres
+     * @param Email the Email to set
      */
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+  
 }
