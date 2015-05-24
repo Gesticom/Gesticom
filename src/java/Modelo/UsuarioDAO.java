@@ -79,7 +79,7 @@ public class UsuarioDAO {
         //boolean resul = false;
         String rta = "";
         try {
-            stmt = con.prepareStatement("INSERT INTO tb_usuarios VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO tb_usuarios VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
             stmt.setLong(1, InsertarUsuario.getId_Usuario());
             stmt.setString(2, InsertarUsuario.getUsuario());
@@ -95,6 +95,7 @@ public class UsuarioDAO {
             stmt.setInt(12, InsertarUsuario.getCargo());
             stmt.setInt(13, InsertarUsuario.getRole());
             stmt.setString(14, InsertarUsuario.getContrasena());
+            stmt.setString(14, InsertarUsuario.getEmail());
 
             int resultado = stmt.executeUpdate();
             if (resultado == 0) {
@@ -115,7 +116,7 @@ public class UsuarioDAO {
         int resultado = 0;
         try {
 
-            stmt = con.prepareStatement("UPDATE tb_usuarios SET Usuario=?,TipoDocumento=?,Nombres=?,Apellidos=?,FechaDeNacimiento=?,LugarDeNacimiento=?,Direccion=?,TelefonoFijo=?,Celular=?,Ciudad=?,Cargo=?,Role=?,Contrasena=? WHERE Id_Usuario=?;");
+            stmt = con.prepareStatement("UPDATE tb_usuarios SET Usuario=?,TipoDocumento=?,Nombres=?,Apellidos=?,FechaDeNacimiento=?,LugarDeNacimiento=?,Direccion=?,TelefonoFijo=?,Celular=?,Ciudad=?,Cargo=?,Role=?,Contrasena=?,Email=? WHERE Id_Usuario=?;");
 
             stmt.setString(1, ActualizarUsuario.getUsuario());
             stmt.setInt(1, ActualizarUsuario.getTipoDocumento());
@@ -130,6 +131,7 @@ public class UsuarioDAO {
             stmt.setInt(10, ActualizarUsuario.getCargo());
             stmt.setInt(11, ActualizarUsuario.getRole());
             stmt.setString(12, ActualizarUsuario.getContrasena());
+            stmt.setString(12, ActualizarUsuario.getEmail());
             stmt.setLong(13, ActualizarUsuario.getId_Usuario());
 
             resultado = stmt.executeUpdate();
@@ -174,7 +176,7 @@ public class UsuarioDAO {
     }
          public UsuarioDTO consultarUnRegistro1(int id)throws SQLException, MyException {
         UsuarioDTO usdto = null;
-        stmt = con.prepareStatement("SELECT Id_usuario, TipoDocumento, Usuario, Nombres, Apellidos,FechaDeNacimiento, LugarDeNacimiento, Direccion, TelefonoFijo, Celular, Ciudad,Cargo, Role, Contrasena user from tb_usuarios where Id_usuario= ?");
+        stmt = con.prepareStatement("SELECT Id_usuario, TipoDocumento, Usuario, Nombres, Apellidos,FechaDeNacimiento, LugarDeNacimiento, Direccion, TelefonoFijo, Celular, Ciudad,Cargo, Role, Contrasena, Email user from tb_usuarios where Id_usuario= ?");
         stmt.setInt(1, id);
 //        usdto.setNombre(pstmt.toString());
         rs = stmt.executeQuery();
@@ -195,6 +197,7 @@ public class UsuarioDAO {
                 usdto.setCiudad(rs.getInt("Ciudad"));
                 usdto.setCargo(rs.getInt("Cargo"));
                 usdto.setRole(rs.getInt("Role"));
+                usdto.setEmail(rs.getString("Email"));
             }
         } else {
             throw new MyException("error al consultar byId");
