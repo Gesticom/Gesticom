@@ -29,7 +29,7 @@
                             <!-- prueba3 -->
                             <!-- prueba Luis-->
                    	<ol class="breadcrumb">
-                            <div id="idioma"> <span class="fa fa-flag"><a href="index.jsp">    Espaï¿½ol</a><a href="indexIngles.jsp"> / English</a> </div>
+                            <div id="idioma"> <span class="fa fa-flag"><a href="index.jsp">    Español</a><a href="indexIngles.jsp"> / English</a> </div>
                             <!-- <li><a href="#">Inicio</a></li> -->
                             <li class="active"><a href="Reportes/RUsuario.jsp" target="_blank">Login</a></li> 
                         </ol>
@@ -45,7 +45,7 @@
 		                        	<td><label for="txtclave">Digite su contraseï¿½a :</label>
 		                        	<td><input type="password" name="txtclave" tabindex="2" required></td><tr>
 	                        	</table>
-                                       <a href="solicitudempleados.html">Olvide mi contraseï¿½a</a>
+                                       <a href="recordar.jsp">Olvide mi contraseña</a>
 	                        </div>
                                 <p id="admin"></p>
                                 <p style="text-align: center; margin: 20px;"><input type="submit" class="btn btn-success boton" tabindex="4" value="Enviar"></p>
