@@ -23,7 +23,7 @@ public class SesionDAO {
             boolean existeUsuario = false;
             try 
         {
-              stmt = con.prepareStatement("SELECT * from tb_usuarios where Usuario=? && Contrasena=?;");
+            stmt = con.prepareStatement("SELECT * from tb_usuarios where Usuario=? && Contrasena=?;");
             stmt.setString(1, inusu.getUsuario());
             stmt.setString(2, inusu.getContrasena());
             
@@ -55,24 +55,25 @@ public class SesionDAO {
         } 
            return unusuarionew;     
         } 
-}
-//      public boolean validar(String nom, String clave){
-//          boolean encontrado= false;
+      public boolean validarUsuario(String nom, String clave){
+//        public validarUsuario(nom,clave){
+//      public boolean validarUsuario(ObjDto){
+          boolean encontrado= false;
 //          
-//          try {
-//             conn=this.obtenerConexion();
-//              st=conn.createStatement();
-////              rs=st.executeQuery("select * from gesticom.login where Usuario='"+nom+"' and Contrasena='"+clave+"';");
-//              rs=st.executeQuery("select * from tb_usuarios where Usuario='"+nom+"' and Contrasena='"+clave+"';");
-//              if(rs.next()){
-//                  
-//                  encontrado=true;
-//              }
-//              this.cerrarConexion();
-//          } catch (Exception e) {
-//          }
-//          return encontrado; 
-//     }
+          try {
+            stmt = con.prepareStatement("select * from tb_usuarios where Usuario='"+nom+"' and Contrasena='"+clave+"';");
+//            stmt = con.prepareStatement("select * from tb_usuarios where Usuario='"+nom+"';");
+            rs = stmt.executeQuery();
+//
+              if(rs.next()){
+                  
+                  encontrado=true;
+              }
+ //             this.cerrarConexion();
+          } catch (Exception e) {
+          }
+          return encontrado; 
+     }
 //      public boolean traerRole(String nom, String clave){
 //          boolean encontrado= false;
 //          
@@ -91,3 +92,4 @@ public class SesionDAO {
 //          return encontrado; 
 //     }
 
+}

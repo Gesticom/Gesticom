@@ -1,11 +1,11 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
-  this template file, cose Tools | Templates
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-import Modelo.CargosDAO;
-import Modelo.CargosDTO;
+import Modelo.CampanaDAO;
+import Modelo.CampanaDTO;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Washington
  */
-public class GesticomTest {
+public class CampanasListarTest {
     
-    public GesticomTest() {
+    public CampanasListarTest() {
     }
     
     @BeforeClass
@@ -41,18 +41,17 @@ public class GesticomTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-
-
     @Test
-    public void ConsultaUnCargo(){
-        CargosDTO cargosdto = new CargosDTO(6,"Tecnologo");
-        CargosDAO cargosdao = new CargosDAO();
-        CargosDTO cargos2dto = new CargosDTO();
-        cargos2dto= cargosdao.consultarUnRegistro1(6);
-        assertEquals(cargos2dto.getId_Cargo(),cargosdto.getId_Cargo());
-        assertEquals(cargos2dto.getCargo(),cargosdto.getCargo());
+    public void consultarRegistro(){
+        CampanaDTO campanadto = new CampanaDTO(3,"Electricaribe");
+        CampanaDAO campanadao = new CampanaDAO();
+        CampanaDTO campana2dto = new CampanaDTO();
+        campanadto= campanadao.consultarUnRegistro1(3);
+        assertEquals(campana2dto.getId_Campana(),campanadto.getId_Campana());
+        assertEquals(campana2dto.getCampana(),campanadto.getCampana());
         
                
+ 
         
         
         

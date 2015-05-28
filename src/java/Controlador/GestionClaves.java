@@ -44,7 +44,12 @@ public class GestionClaves extends HttpServlet {
         SesionDAO Sesion = new SesionDAO();
           
           ObjDto.setUsuario(Usuario);
-          ObjDto = Sesion.ValidarUsuario(ObjDto);
+          String nom="";
+          String clave="";
+          
+ //         ObjDto = Sesion.validarUsuario(nom,clave);
+          
+          
           
           if(ObjDto.getUsuario().equals("No en contrado")){
           

@@ -1,6 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
-  this template file, cose Tools | Templates
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
@@ -17,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author Washington
  */
-public class GesticomTest {
+public class CargosInsertarTest {
     
-    public GesticomTest() {
+    public CargosInsertarTest() {
     }
     
     @BeforeClass
@@ -41,20 +41,13 @@ public class GesticomTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-
-
     @Test
-    public void ConsultaUnCargo(){
-        CargosDTO cargosdto = new CargosDTO(6,"Tecnologo");
+    public void InsertarCargo() {
+        CargosDTO cargosdto =new CargosDTO(12,"Assssste12");
         CargosDAO cargosdao = new CargosDAO();
-        CargosDTO cargos2dto = new CargosDTO();
-        cargos2dto= cargosdao.consultarUnRegistro1(6);
-        assertEquals(cargos2dto.getId_Cargo(),cargosdto.getId_Cargo());
-        assertEquals(cargos2dto.getCargo(),cargosdto.getCargo());
-        
-               
-        
-        
+        String resu = cargosdao.IngresarCargo(cargosdto);
+        String resuEsperado = "Registro ingresado exitosamente";
+        assertEquals(resu,resuEsperado);
         
     }
 }
