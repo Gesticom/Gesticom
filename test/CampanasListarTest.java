@@ -46,7 +46,7 @@ public class CampanasListarTest {
         CampanaDTO campanadto = new CampanaDTO(3,"Electricaribe");
         CampanaDAO campanadao = new CampanaDAO();
         CampanaDTO campana2dto = new CampanaDTO();
-        campanadto= campanadao.consultarUnRegistro1(3);
+       // campanadto= campanadao.consultarUnRegistro1(3);
         assertEquals(campana2dto.getId_Campana(),campanadto.getId_Campana());
         assertEquals(campana2dto.getCampana(),campanadto.getCampana());
         
