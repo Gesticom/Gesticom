@@ -42,7 +42,7 @@
 		                        	<td><label for="txtusuario">Nombre Usuario :</label>
 		                        	<td><input type="text" name="txtusuario"   maxlength="16" required tabindex="1"></td><tr>
 		                        	<br>
-		                        	<td><label for="txtclave">Digite su contraseï¿½a :</label>
+		                        	<td><label for="txtclave">Digite su contraseña :</label>
 		                        	<td><input type="password" name="txtclave" tabindex="2" required></td><tr>
 	                        	</table>
                                        <a href="recordar.jsp">Olvide mi contraseña</a>
