@@ -39,9 +39,9 @@ public class GestionHojasDeVida extends HttpServlet {
             HojasDeVidaDTO objDto = new HojasDeVidaDTO();
             HojasDeVidaDAO objDao = new HojasDeVidaDAO();
 
-            if (request.getParameter("Boton").equals("Hoja de Vida Nueva")) {
+            if (request.getParameter("Boton").equals("Nueva")) {
                 objDto.setId_Cedula(Integer.parseInt(request.getParameter("Id_Cedula")));
-                objDto.setNombres(request.getParameter("Nombre"));
+                objDto.setNombres(request.getParameter("Nombres"));
                 objDto.setApellidos(request.getParameter("Apellidos"));
                 objDto.setDireccion(request.getParameter("Direccion"));
                 objDto.setTelefono(request.getParameter("Telefono"));
@@ -52,11 +52,12 @@ public class GestionHojasDeVida extends HttpServlet {
                 objDto.setEstadoCivil(request.getParameter("EstadoCivil"));
                 objDto.setNoHijos(Integer.parseInt(request.getParameter("NoHijos")));
                 String Estado = objDao.IngresarHoja(objDto);
-                RequestDispatcher Rd = request.getRequestDispatcher("hojaDeVidaCrear.jsp?mensaje=" + Estado);
+                RequestDispatcher Rd = request.getRequestDispatcher("hojasDeVidaListar.jsp?mensaje=" + Estado);
                 Rd.forward(request, response);
                 
             }else if (request.getParameter("Boton").equals("BorrarHojaDeVida") ){
-                objDto.setId_Cedula(Integer.parseInt(request.getParameter("Id_Cedula")));
+                objDto.setId_Cedula(Integer.parseInt(request.getParameter("pos")));
+
 
                 String Estado = objDao.BorrarHojaDeVida(objDto);
               
@@ -65,8 +66,9 @@ public class GestionHojasDeVida extends HttpServlet {
                 Rd.forward(request, response);
                 
             }else if (request.getParameter("Boton").equals("Actualizar") ){
-                objDto.setId_Cedula(Integer.parseInt(request.getParameter("Id_Cedula")));
-                objDto.setNombres(request.getParameter("Nombre"));
+                objDto.setId_Cedula(Long.parseLong(request.getParameter("Id_Cedula")));
+
+                objDto.setNombres(request.getParameter("Nombres"));
                 objDto.setApellidos(request.getParameter("Apellidos"));
                 objDto.setDireccion(request.getParameter("Direccion"));
                 objDto.setTelefono(request.getParameter("Telefono"));

@@ -1,4 +1,6 @@
-<%@page import="java.util.ArrayList"%>
+
+<%@page import="Modelo.HojasDeVidaDTO"%>
+<%@page import="Modelo.HojasDeVidaDAO"%>
 <html><!-- InstanceBegin template="../Templates/Gesticom.dwt" codeOutsideHTMLIsLocked="false" -->
     <head>
         <meta charset="utf-8">
@@ -51,7 +53,7 @@
                         <div id="Usuario"><a class="well-sm">ADMINISTRADOR </a><a href="LogOut">Cerrar Sesión</a></div>
                         <li><a href="index.jsp">Inicio</a></li>
                         <li><a href="inicioAdmin.jsp">Usuarios</a></li>
-                        <li href="usuariosCrear.jsp" class="active">Crear</li>
+                        <li href="usuariosEditar.jsp" class="active">Editar</li>
                     </ol>
                     <script type="text/javascript">
                         $(function () {
@@ -65,53 +67,58 @@
                             });
                         })
                     </script>
+                    <%
+                        int Posi = Integer.parseInt(request.getParameter("pos"));
+                        HojasDeVidaDAO hojadao = new HojasDeVidaDAO();
+                        HojasDeVidaDTO hojadto = new HojasDeVidaDTO();
+                        hojadto = hojadao.consultarUnRegistro1(Posi);
+                    %>
 
-                    <form id="formularioUsuarios" method="post" action="GestionHojasDeVida">
+                    <form name="formularioActualizacionHojasDeVida" action="GestionHojasDeVida" method="POST">
                         <div id="Usuarios1">
 
-                            <table class="table table-condensed" border=0>
+                            <table class="table table-condensed" border=3>
 
-                            <!--<table class="table table-condensed table-striped" border=3> -->
+                                <!--                                <table class="table table-condensed table-striped" border=3> -->
 
                                 <td><label for="Id_Cedula">Documento:</label>
-                                <td><input type="text" name="Id_Cedula" id="Id_Cedula"  maxlength="15" required tabindex="2"></td>
+                                <td><input type="text" name="Id_Cedula" id="Id_Cedula" value="<%if(hojadto!=null){out.print(hojadto.getId_Cedula());}%>"> </td>
 
                                 <td><label for="Nombres">Nombres:</label>
-                                <td><input type="text" name="Nombres" id="Nombres"  maxlength="15" required tabindex="2"></td><tr>
+                                <td><input name="Nombres" id="Nombres" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getNombres());}%>"></td><tr>
+                                    
+                                <td><label for="Apellidos">Apellidos:</label> 
+                                <td><input name="Apellidos" id="Apellidos" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getApellidos());}%>"></td>
 
-                                <td><label for="Apellidos">Apellidos:</label>
-                                <td><input name="Apellidos" id="Apellidos" type="text"  required maxlength="15" tabindex="3"></td>
-
-                                <td><label for="Direccion">Direccion:</label>
-                                <td><input name="Direccion" id="Direccion" type="text" tabindex="5"></td><tr>
-
-                                <td><label for="Telefono">Telefono:</label>
-                                <td><input name="Telefono" id="Telefono" type="text"  required maxlength="10" tabindex="6"></td>
+                                <td><label for="Direccion">Dirección:</label>
+                                <td><input name="Direccion" id="Direccion" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getDireccion());}%>"></td><tr>
+ 
+                                <td><label for="Telefono">Teléfono:</label>
+                                <td><input name="Telefono" id="Telefono" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getTelefono());}%>"></td>
 
                                 <td><label for="Celular">Celular:</label>
-                                <td><input name="Celular" id="Celular" type="text"  required tabindex="7"></td><tr>
+                                <td><input name="Celular" id="Celular" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getCelular());}%>"></td><tr>
 
                                 <td><label for="FechaNacimiento">Fecha Nacimiento:</label>
-                                <td><input name="FechaNacimiento" id="FechaNacimiento" type="text"  required maxlength="50" tabindex="8"></td>
-
+                                <td><input name="FechaNacimiento" id="FechaNacimiento" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getFechaNacimiento());}%>"></td>
+                                    
                                 <td><label for="CiudadNacimiento">Ciudad Nacimiento:</label>
-                                <td><input name="CiudadNacimiento" id="CiudadNacimiento" type="text"  required maxlength="10" tabindex="8"></td><tr>
-
+                                <td><input name="CiudadNacimiento" id="CiudadNacimiento" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getCiudadNacimiento());}%>"></td><tr>
+                                    
                                 <td><label for="CiudadResidencia">Ciudad Residencia:</label>
-                                <td><input name="CiudadResidencia" id="CiudadResidencia" type="text"  required maxlength="10" tabindex="8"></td>
-
+                                <td><input name="CiudadResidencia" id="CiudadResidencia" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getCiudadResidencia());}%>"></td>
+                                    
                                 <td><label for="EstadoCivil">Estado Civil:</label>
-                                <td><input name="EstadoCivil" id="EstadoCivil" type="text"  required maxlength="10" tabindex="8"></td><tr>
-
+                                <td><input name="EstadoCivil" id="EstadoCivil" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getEstadoCivil());}%>"></td><tr>
+                                    
                                 <td><label for="NoHijos">Hijos:</label>
-                                <td><input name="NoHijos" id="NoHijos" type="text"  required maxlength="1" tabindex="9">
+                                <td><input name="NoHijos" id="NoHijos" type="text"  value="<%if(hojadto!=null){out.print(hojadto.getNoHijos());}%>"></td>
 
                                 <td><label for=""></label>
                                 <td><label for=""></label>
-
 
                             </table>  
-                            <input type="submit" class="btn btn-success" name="Boton" value="Nueva" />
+                            <input type="submit" class="btn btn-success" name="Boton" value="Actualizar" />
                             <input type="submit" class="btn btn-success" name="Boton" value="Cancelar" />
 
                         </div>                        
@@ -124,14 +131,14 @@
 
 
                     %>
-                    <script type="text/javascript"> alert("Hoja de vida Registrada Correctamente")</script>
+                    <script type="text/javascript"> alert("Usuario Actualizado Correctamente")</script>
 
                     <%         }
                     %>                  
 
                     <script>
                         $().ready(function () {
-                            $("#formularioUsuarios").validate({
+                            $("#formularioActualizacionUsuarios").validate({
                                 rules: {
                                     Iddocumento: {
                                         required: true,

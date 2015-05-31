@@ -59,7 +59,7 @@ public class HojasDeVidaDAO {
             stmt = con.prepareStatement("INSERT INTO tb_hojadevida VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 
 
-            stmt.setInt(1, InsertarHoja.getId_Cedula());
+            stmt.setLong(1, InsertarHoja.getId_Cedula());
             stmt.setString(2, InsertarHoja.getNombres());
             stmt.setString(3, InsertarHoja.getApellidos());
             stmt.setString(4, InsertarHoja.getDireccion());
@@ -90,7 +90,7 @@ public class HojasDeVidaDAO {
         int resultado = 0;
         try {
 
-            stmt = con.prepareStatement("UPDATE tb_hojadevida SET Nombres=?,Apellidos=?,Direccion=?,Telefono=?,Celular=?,FechaNacimiento=?,CiudadNacimiento=?,CiudadResidencia=?,EstadoCivil=?,NoHijos=?, WHERE Id_Cedula=?;");
+            stmt = con.prepareStatement("UPDATE tb_hojadevida SET Nombres=?,Apellidos=?,Direccion=?,Telefono=?,Celular=?,FechaNacimiento=?,CiudadNacimiento=?,CiudadResidencia=?,EstadoCivil=?,NoHijos=? WHERE Id_Cedula=?;");
 
             
             stmt.setString(1, ActualizarHojaDeVida.getNombres());
@@ -103,7 +103,7 @@ public class HojasDeVidaDAO {
             stmt.setInt(8, ActualizarHojaDeVida.getCiudadResidencia());
             stmt.setString(9, ActualizarHojaDeVida.getEstadoCivil());
             stmt.setInt(10, ActualizarHojaDeVida.getNoHijos());
-            stmt.setInt(11, ActualizarHojaDeVida.getId_Cedula());
+            stmt.setLong(11, ActualizarHojaDeVida.getId_Cedula());
 
             resultado = stmt.executeUpdate();
             if (resultado == 0) {
@@ -124,7 +124,7 @@ public class HojasDeVidaDAO {
        String rta="";
         try 
         {
-            stmt = con.prepareStatement("DELETE FROM tb_hojadevida  WHERE Id_Cedula=?");
+            stmt = con.prepareStatement("DELETE FROM tb_hojadevida WHERE Id_Cedula=?");
             stmt.setLong(1,BorrarHojaDeVida.getId_Cedula());
             
             

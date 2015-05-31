@@ -28,7 +28,7 @@ public class HojasDeVidaDTO {
     public HojasDeVidaDTO() {
     }
 
-    private int Id_Cedula;
+    private long Id_Cedula;
     private String Nombres;
     private String Apellidos;
     private String Direccion;
@@ -43,14 +43,14 @@ public class HojasDeVidaDTO {
     /**
      * @return the Id_Cedula
      */
-    public int getId_Cedula() {
+    public long getId_Cedula() {
         return Id_Cedula;
     }
 
     /**
      * @param Id_Cedula the Id_Cedula to set
      */
-    public void setId_Cedula(int Id_Cedula) {
+    public void setId_Cedula(long Id_Cedula) {
         this.Id_Cedula = Id_Cedula;
     }
 

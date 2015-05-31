@@ -132,7 +132,7 @@
                                             
                                     %>
 
-                                <td>  <a href='GestionHojasDeVida?Boton=BorrarHojas&pos=<%=listado.get(a).getId_Cedula()%>'   >  <img src="imagenes/eliminar.png" width="36" height="36" alt="actaul" title='Usted quiere eliminar a : <%=listado.get(a).getNombres()%> ' onclick="return  PreguntaValida('<%=listado.get(a).getNombres()%>')"    />
+                                <td>  <a href='GestionHojasDeVida?Boton=BorrarHojaDeVida&pos=<%=listado.get(a).getId_Cedula()%>'   >  <img src="imagenes/eliminar.png" width="36" height="36" alt="actaul" title='Usted quiere eliminar a : <%=listado.get(a).getNombres()%> ' onclick="return  PreguntaValida('<%=listado.get(a).getNombres()%>')"    />
                                     </a>           </td>
 
                                 <td>  <a href='hojasDeVidaEditar.jsp?Boton=EditarHojas&pos=<%=listado.get(a).getId_Cedula()%>'>  <img src="imagenes/actualizar.png" width="36" height="36" alt="actaul" title='Usted quiere actualizar a :  <%=listado.get(a).getNombres()%> ' onclick="return  PreguntaValida('<%=listado.get(a).getNombres()%>')"/>

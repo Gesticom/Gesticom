@@ -24,6 +24,10 @@
         <servlet-name>GestionLogin</servlet-name>
         <servlet-class>ControladorSesion.GestionLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GestionHojasDeVida</servlet-name>
+        <servlet-class>Controlador.GestionHojasDeVida</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GestionUsuarios</servlet-name>
         <url-pattern>/GestionUsuarios</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>GestionLogin</servlet-name>
         <url-pattern>/GestionLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GestionHojasDeVida</servlet-name>
+        <url-pattern>/GestionHojasDeVida</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
