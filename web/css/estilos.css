@@ -288,7 +288,7 @@ section{
 
   }
 label{
-	width: 400px;
+	width: 150px;
 	text-align: center;
 	display: inline-block; /* Aparece en línea pero ocupando espacio de un bloque */
 	margin: 5px 0 5px 0; /* Separación arriba y abajo de 15px con los elementos aledaños */

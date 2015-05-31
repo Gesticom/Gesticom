@@ -69,9 +69,9 @@
                     <form id="formularioUsuarios" method="post" action="GestionHojasDeVida">
                         <div id="Usuarios1">
 
-                            <table class="table table-condensed" border=3>
+                            <table class="table table-condensed" border=0>
 
-                                <!--                                <table class="table table-condensed table-striped" border=3> -->
+                            <!--<table class="table table-condensed table-striped" border=3> -->
 
                                 <td><label for="Id_Cedula">Documento:</label>
                                 <td><input type="text" name="Id_Cedula" id="Id_Cedula"  maxlength="15" required tabindex="2"></td>
@@ -80,32 +80,35 @@
                                 <td><input type="text" name="Nombres" id="Nombres"  maxlength="15" required tabindex="2"></td><tr>
 
                                 <td><label for="Apellidos">Apellidos:</label>
-                                <td><input name="Apellidos" id="Apellidos" type="text"  required maxlength="45" tabindex="3"></td>
+                                <td><input name="Apellidos" id="Apellidos" type="text"  required maxlength="15" tabindex="3"></td>
 
                                 <td><label for="Direccion">Direccion:</label>
                                 <td><input name="Direccion" id="Direccion" type="text" tabindex="5"></td><tr>
 
                                 <td><label for="Telefono">Telefono:</label>
-                                <td><input name="Telefono" id="Telefono" type="text"  required maxlength="10" tabindex="6"></td><tr>
+                                <td><input name="Telefono" id="Telefono" type="text"  required maxlength="10" tabindex="6"></td>
 
                                 <td><label for="Celular">Celular:</label>
-                                <td><input name="Celular" id="Celular" type="text"  required tabindex="7"></td>
-}
+                                <td><input name="Celular" id="Celular" type="text"  required tabindex="7"></td><tr>
+
                                 <td><label for="FechaNacimiento">Fecha Nacimiento:</label>
-                                <td><input name="FechaNacimiento" id="FechaNacimiento" type="text"  required maxlength="50" tabindex="8"></td><tr>
+                                <td><input name="FechaNacimiento" id="FechaNacimiento" type="text"  required maxlength="50" tabindex="8"></td>
 
                                 <td><label for="CiudadNacimiento">Ciudad Nacimiento:</label>
-                                <td><input name="CiudadNacimiento" id="CiudadNacimiento" type="text"  required maxlength="50" tabindex="8"></td><tr>
+                                <td><input name="CiudadNacimiento" id="CiudadNacimiento" type="text"  required maxlength="10" tabindex="8"></td><tr>
 
                                 <td><label for="CiudadResidencia">Ciudad Residencia:</label>
-                                <td><input name="CiudadResidencia" id="CiudadResidencia" type="text"  required maxlength="50" tabindex="8"></td><tr>
+                                <td><input name="CiudadResidencia" id="CiudadResidencia" type="text"  required maxlength="10" tabindex="8"></td>
 
                                 <td><label for="EstadoCivil">Estado Civil:</label>
-                                <td><input name="EstadoCivil" id="EstadoCivil" type="text"  required maxlength="50" tabindex="8"></td><tr>
+                                <td><input name="EstadoCivil" id="EstadoCivil" type="text"  required maxlength="10" tabindex="8"></td><tr>
 
                                 <td><label for="NoHijos">Hijos:</label>
-                                <td><input name="NoHijos" id="NoHijos" type="text"  required maxlength="45" tabindex="9">
-                                    
+                                <td><input name="NoHijos" id="NoHijos" type="text"  required maxlength="1" tabindex="9">
+
+                                <td><label for=""></label>
+                                <td><label for=""></label>
+
 
                             </table>  
                             <input type="submit" class="btn btn-success" name="Boton" value="Hoja de Vida Nueva" />
