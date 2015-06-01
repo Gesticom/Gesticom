@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class SolicitudesDAO {
 
-    Connection con = Conexion.getInstace();
+    Connection conn = Conexion.getInstace();
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
@@ -27,21 +27,72 @@ public class SolicitudesDAO {
         ArrayList<SolicitudesDTO> listado = new ArrayList<SolicitudesDTO>();
 
         try {
-            stmt = con.prepareStatement("SELECT * FROM tb_solicitudes ");
+            stmt = conn.prepareStatement("select sol.Id_Solicitud as idsol,cam.Campana,"+
+                      "ca.Cargo, "+
+                      "sol.FechaDeInicio, "+
+                      "ciu.Ciudad, "+
+                      "dep.Departamento, "+
+                      "est.Estado "+
+                      "from tb_solicitudes sol "+
+                      " join tb_cargo ca on sol.Id_Cargo = ca.Id_Cargo"+
+                      " join tb_departamento dep on sol.Id_Departamento = dep.Id_Departamento"+
+                      " join tb_campana cam on sol.Id_Campana = cam.Id_Campana"+
+                      " join tb_ciudad ciu on sol.Id_Ciudad = ciu.Id_Ciudad"+
+                      " join tb_estado est on sol.Id_Estado = est.Id_Estado;");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                SolicitudesDTO unsolicitudesnew = new SolicitudesDTO();
-                unsolicitudesnew.setId_Solicitud(rs.getInt("Id_Solicitud"));
-                unsolicitudesnew.setFecha(rs.getString("Fecha"));
-                unsolicitudesnew.setCargo(rs.getInt("Cargo"));
-                unsolicitudesnew.setPerfil(rs.getString("Perfil"));
-                unsolicitudesnew.setExperiencia(rs.getString("Experiencia"));
-                unsolicitudesnew.setEstudio(rs.getString("Estudio"));
-                unsolicitudesnew.setDepartamento(rs.getInt("Departamento"));
-                unsolicitudesnew.setCoordinadorSolicitante(rs.getInt("CoordinadorSolicitante"));
-                listado.add(unsolicitudesnew);
+                 SolicitudesDTO unsolicitudesnew = new SolicitudesDTO();
+                 unsolicitudesnew.setId_Solicitud(rs.getInt("idsol"));
+                 unsolicitudesnew.setCampana(rs.getString("Campana"));
+                 unsolicitudesnew.setCargo(rs.getString("Cargo"));
+                 unsolicitudesnew.setFechaDeInicio(rs.getString("FechaDeInicio"));
+                 unsolicitudesnew.setCiudad(rs.getString("Ciudad"));
+                 unsolicitudesnew.setDepartamento(rs.getString("Departamento"));
+                 unsolicitudesnew.setEstado(rs.getString("Estado"));
+                 listado.add(unsolicitudesnew);
+            }
 
+        } catch (SQLException sqle) {
+
+        }
+        return listado;
+    }
+    
+    public ArrayList<SolicitudesDTO> ConsultarTodosuno() {
+
+        ArrayList<SolicitudesDTO> listado = new ArrayList<SolicitudesDTO>();
+
+        try {
+            stmt = conn.prepareStatement("select sol.Id_Solicitud as idsol,"+
+                     "sol.Vacantes, "+
+                     "sol.Perfil,"+
+                     "cam.Campana,"+
+                      "ca.Cargo, "+
+                      "sol.FechaDeInicio, "+
+                      "ciu.Ciudad, "+
+                      "dep.Departamento, "+
+                      "est.Estado "+
+                      "from tb_solicitudes sol "+
+                      " join tb_cargo ca on sol.Id_Cargo = ca.Id_Cargo"+
+                      " join tb_departamento dep on sol.Id_Departamento = dep.Id_Departamento"+
+                      " join tb_campana cam on sol.Id_Campana = cam.Id_Campana"+
+                      " join tb_ciudad ciu on sol.Id_Ciudad = ciu.Id_Ciudad"+
+                      " join tb_estado est on sol.Id_Estado = est.Id_Estado;");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                 SolicitudesDTO unsolicitudesnew = new SolicitudesDTO();
+                 unsolicitudesnew.setId_Solicitud(rs.getInt("idsol"));
+                 unsolicitudesnew.setVacantes(rs.getInt("Vacantes"));
+                 unsolicitudesnew.setPerfil(rs.getString("Perfil"));
+                 unsolicitudesnew.setCampana(rs.getString("Campana"));
+                 unsolicitudesnew.setCargo(rs.getString("Cargo"));
+                 unsolicitudesnew.setFechaDeInicio(rs.getString("FechaDeInicio"));
+                 unsolicitudesnew.setCiudad(rs.getString("Ciudad"));
+                 unsolicitudesnew.setDepartamento(rs.getString("Departamento"));
+                 unsolicitudesnew.setEstado(rs.getString("Estado"));
+                 listado.add(unsolicitudesnew);
             }
 
         } catch (SQLException sqle) {
@@ -56,16 +107,17 @@ public class SolicitudesDAO {
         //boolean resul = false;
         String rta = "";
         try {
-            stmt = con.prepareStatement("INSERT INTO tb_solicitudes VALUES(?,?,?,?,?,?,?,?,?)");
+            stmt = conn.prepareStatement("INSERT INTO tb_solicitudes VALUES(?,?,?,?,?,?,?,?,?)");
             stmt.setInt(1,InsertarSolicitud.getId_Solicitud());
-            stmt.setString(2,InsertarSolicitud.getFecha());
-            stmt.setInt(3,InsertarSolicitud.getCargo());
-            stmt.setString(4,InsertarSolicitud.getPerfil());
-            stmt.setString(5,InsertarSolicitud.getExperiencia());
-            stmt.setString(6,InsertarSolicitud.getConocimiento());
-            stmt.setString(7,InsertarSolicitud.getEstudio());
-            stmt.setInt(8,InsertarSolicitud.getDepartamento());
-            stmt.setInt(9,InsertarSolicitud.getCoordinadorSolicitante());
+            stmt.setInt(2,InsertarSolicitud.getVacantes());
+            stmt.setInt(3,InsertarSolicitud.getId_Cargo());
+            stmt.setString(4,InsertarSolicitud.getFechaDeInicio());
+            stmt.setInt(5,InsertarSolicitud.getId_Ciudad());
+            stmt.setString(6,InsertarSolicitud.getPerfil());
+            stmt.setInt(7,InsertarSolicitud.getId_Estado());
+            stmt.setInt(8,InsertarSolicitud.getId_Departamento());
+            stmt.setInt(9,InsertarSolicitud.getId_Campana());
+            
 
             int resultado = stmt.executeUpdate();
             if (resultado == 0) {
@@ -86,18 +138,18 @@ public class SolicitudesDAO {
         int resultado = 0;
         try {
 
-            stmt = con.prepareStatement("UPDATE tb_solicitudes SET Fecha=?,Cargo=?,Perfil=?,Experiencia=?,Conocimiento=?,Estudio=?,Departamento=?,CoordinadorSolicitante=? WHERE Id_Solicitud=?;");
+            stmt = conn.prepareStatement("UPDATE tb_solicitudes SET Vacantes=?,Id_Cargo=?,FechaDeInicio=?,Id_Ciudad=?,Perfil=?,Id_Estado=?,Id_Departamento=?,Id_Campana=? WHERE Id_Solicitud=?;");
 
-            stmt.setString(1, ActualizarSolicitud.getFecha());
-            stmt.setInt(2, ActualizarSolicitud.getCargo());
-            stmt.setString(3, ActualizarSolicitud.getPerfil());
-            stmt.setString(4, ActualizarSolicitud.getExperiencia());
-            stmt.setString(5, ActualizarSolicitud.getConocimiento());
-            stmt.setString(6, ActualizarSolicitud.getEstudio());
-            stmt.setInt(7, ActualizarSolicitud.getDepartamento());
-            stmt.setInt(8, ActualizarSolicitud.getCoordinadorSolicitante());
-            stmt.setInt(9, ActualizarSolicitud.getId_Solicitud());
-            
+           
+            stmt.setInt(1,ActualizarSolicitud.getVacantes());
+            stmt.setInt(2,ActualizarSolicitud.getId_Cargo());
+            stmt.setString(3,ActualizarSolicitud.getFechaDeInicio());
+            stmt.setInt(4,ActualizarSolicitud.getId_Ciudad());
+            stmt.setString(5,ActualizarSolicitud.getPerfil());
+            stmt.setInt(6,ActualizarSolicitud.getId_Estado());
+            stmt.setInt(7,ActualizarSolicitud.getId_Departamento());
+            stmt.setInt(8,ActualizarSolicitud.getId_Campana());
+            stmt.setInt(9,ActualizarSolicitud.getId_Solicitud()); 
             
             
 
@@ -120,7 +172,7 @@ public class SolicitudesDAO {
        String rta="";
         try 
         {
-            stmt = con.prepareStatement("DELETE FROM tb_solicitudes  WHERE Id_Solicitud=?");
+            stmt = conn.prepareStatement("DELETE FROM tb_solicitudes  WHERE Id_Solicitud=?");
             stmt.setLong(1,BorrarSol.getId_Solicitud());
             
             
@@ -141,34 +193,39 @@ public class SolicitudesDAO {
             }
     return rta;
     }
-         public SolicitudesDTO consultarUnRegistro1(int id)throws SQLException, MyException {
-        SolicitudesDTO sodto = null;
-        stmt = con.prepareStatement("SELECT Id_Solicitud,Fecha,Cargo,Perfil,Experiencia,Conocimiento,Estudio,Departamento,CoordinadorSolicitante from tb_solicitudes where Id_Solicitud= ?");
+     public SolicitudesDTO consultarUnRegistro1(int id)throws SQLException, MyException {
+            
+        SolicitudesDTO redto = null;
+        stmt = conn.prepareStatement("SELECT * from tb_solicitudes where Id_Solicitud= ?");
         stmt.setInt(1, id);
 //        usdto.setNombre(pstmt.toString());
         rs = stmt.executeQuery();
 
         if (rs != null) {
             while (rs.next()) {
-                sodto = new SolicitudesDTO();
-                sodto.setId_Solicitud(rs.getInt("Id_Solicitud"));
-                sodto.setFecha(rs.getString("Fecha"));
-                sodto.setCargo(rs.getInt("Cargo"));
-                sodto.setPerfil(rs.getString("Perfil"));
-                sodto.setExperiencia(rs.getString("Experiencia"));
-                sodto.setConocimiento(rs.getString("Conocimiento"));
-                sodto.setEstudio(rs.getString("Estudio"));
-                sodto.setDepartamento(rs.getInt("Departamento"));
-                sodto.setCoordinadorSolicitante(rs.getInt("CoordinadorSolicitante"));
+                redto = new SolicitudesDTO();
+                redto.setId_Solicitud(rs.getInt("Id_Solicitud"));
+                redto.setVacantes(rs.getInt("Vacantes"));
+                redto.setId_Cargo(rs.getInt("Id_Cargo"));
+                redto.setFechaDeInicio(rs.getString("FechaDeInicio"));
+                redto.setId_Ciudad(rs.getInt("Id_Ciudad"));
+                redto.setPerfil(rs.getString("Perfil"));
+                redto.setId_Estado(rs.getInt("Id_Estado"));
+                redto.setId_Departamento(rs.getInt("Id_Departamento"));
+                redto.setId_Campana(rs.getInt("Id_Campana"));
+                
+              
+                      
             }
         } else {
             throw new MyException("error al consultar byId");
         }
-        return sodto;
+        return redto;
     }
 
 
-    private PreparedStatement setInt(int i, long id_Solicitud) {
+
+    private PreparedStatement setInt(int i, int Id_Solicitud) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

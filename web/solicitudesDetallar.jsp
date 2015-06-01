@@ -1,3 +1,7 @@
+<%@page import="Modelo.SolicitudesDAO"%>
+<%@page import="Modelo.SolicitudesDTO"%>
+<%@page import="java.util.ArrayList"%>
+
 <html><!-- InstanceBegin template="../Templates/Gesticom.dwt" codeOutsideHTMLIsLocked="false" -->
     <head>
         <meta charset="utf-8">
@@ -31,14 +35,12 @@
                         <!--  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a> -->
                         <li><a class="btn btn-primary" href="solicitudesListar1.jsp"><i class="fa fa-user fa-fw"></i> Solicitudes</a>
                             <ul>
-                                <li><a href="solicitudesCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="solicitudesListar1.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="hojasDeVidaListar.jsp"><i class="fa fa-globe fa-fw"></i> Hojas de Vida</a>
-                            <ul>
-                                <li><a href="hojasDeVidaCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="hojasDeVidaListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                        <li><a class="btn btn-primary" href="hojaDeVidaListar.jsp"><i class="fa fa-globe fa-fw"></i> Hojas de Vida</a>
+                            <ul>                            
+                                <li><a href=""><i class="fa fa-file-text-o fa-fw"></i>Listar</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -59,7 +61,47 @@
                     <!-- InstanceEndEditable -->
 
                 </section>
+                <section>
+                    <table class="table table-condensed" border=3 style=" margin:-270px auto;width:80%;">
+                                
+                        <tbody>
+                            <%
+                                        SolicitudesDTO ObjDtoC = new SolicitudesDTO();
+                                        SolicitudesDAO ObjDaoC = new SolicitudesDAO();
+                                        ArrayList<SolicitudesDTO> listado = new ArrayList<SolicitudesDTO>();
+                                        listado = ObjDaoC.ConsultarTodosuno();
 
+                                        for (int a = 0; a < listado.size(); a++) {
+                                            out.print("<tr><td>No Solicitud</td><td>" + listado.get(a).getId_Solicitud()+ "</td></tr>");
+                                            out.print("<tr><td>Vacantes</td><td>" + listado.get(a).getVacantes()+ "</td></tr>");
+                                            out.print("<tr><td>Cargo</td><td>" + listado.get(a).getCargo()+ "</td></tr>");
+                                            out.print("<tr><td>Fecha</td><td>"+ listado.get(a).getFechaDeInicio()+ "</td></tr>");
+                                            out.print("<tr><td>Ciudad</td><td>"+ listado.get(a).getCiudad()+"</td></tr>");
+                                            out.print("<tr><td>Perfil</td><td>"+ listado.get(a).getPerfil()+"</td></tr>");
+                                            out.print("<tr><td>Estado</td><td>"+ listado.get(a).getEstado()+"</td></tr>");
+                                            out.print("<tr><td>Departamento</td><td>"+ listado.get(a).getDepartamento()+ "</td></tr>");
+                                            out.print("<tr><td>Campana</td><td>" + listado.get(a).getCampana()+ "</td></tr>");                                        
+                                    %>
+                                    
+                       
+                                <%
+                                    }
+                                %>
+                                <%
+
+                    if (request.getParameter("mensaje") != null) {
+
+
+                    %>
+                    <script type="text/javascript"> alert("Usuario Borrado exitosamente")</script>
+
+                    <%         }
+                    %> 
+                        </tbody>
+
+
+                    </table> 
+                </section>
                 <div id="pie"><a href="AboutGesticom.jsp">Versión 1.0 | COPYRIGHT  	&copy;2014 GESTICOM | Contáctenos: 3133163023</a></div>
                 <div id="iconos">Siguenos también en  <IMG SRC="imagenes/iconos.png" height="30" width="116"></div>
 
