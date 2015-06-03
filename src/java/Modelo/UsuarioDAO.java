@@ -49,7 +49,7 @@ public class UsuarioDAO {
         }
         return listado;
     }
-    
+
     public ArrayList<UsuarioDTO> consultarRegistroRole(int id) {
 
         ArrayList<UsuarioDTO> listado = new ArrayList<UsuarioDTO>();
@@ -73,8 +73,7 @@ public class UsuarioDAO {
         }
         return listado;
     }
-           
-    
+
     public String IngresarUsuario(UsuarioDTO InsertarUsuario) {
         //boolean resul = false;
         String rta = "";
@@ -110,29 +109,17 @@ public class UsuarioDAO {
         return rta;
     }
 
-        public String ActualizarUsuario(UsuarioDTO ActualizarUsuario) {
+    public String ActualizarUsuario(UsuarioDTO ActualizarUsuario) {
         //boolean resul = false;
         String rta = "";
         int resultado = 0;
         try {
 
-            stmt = con.prepareStatement("UPDATE tb_usuarios SET Usuario=?,TipoDocumento=?,Nombres=?,Apellidos=?,FechaDeNacimiento=?,LugarDeNacimiento=?,Direccion=?,TelefonoFijo=?,Celular=?,Ciudad=?,Cargo=?,Role=?,Contrasena=?,Email=? WHERE Id_Usuario=?;");
-
-            stmt.setString(1, ActualizarUsuario.getUsuario());
-            stmt.setInt(1, ActualizarUsuario.getTipoDocumento());
-            stmt.setString(2, ActualizarUsuario.getNombres());
-            stmt.setString(3, ActualizarUsuario.getApellidos());
-            stmt.setString(4, ActualizarUsuario.getFechaDeNacimiento());
-            stmt.setString(5, ActualizarUsuario.getLugarDeNacimiento());
-            stmt.setString(6, ActualizarUsuario.getDireccion());
-            stmt.setString(7, ActualizarUsuario.getTelefonoFijo());
-            stmt.setString(8, ActualizarUsuario.getCelular());
-            stmt.setInt(9, ActualizarUsuario.getCiudad());
-            stmt.setInt(10, ActualizarUsuario.getCargo());
-            stmt.setInt(11, ActualizarUsuario.getRole());
-            stmt.setString(12, ActualizarUsuario.getContrasena());
-            stmt.setString(12, ActualizarUsuario.getEmail());
-            stmt.setLong(13, ActualizarUsuario.getId_Usuario());
+            stmt = con.prepareStatement("UPDATE tb_usuarios SET Contrasena=? WHERE Id_Usuario=?;");
+            
+        
+            stmt.setString(1, ActualizarUsuario.getContrasena());
+            stmt.setLong(2, ActualizarUsuario.getId_Usuario());
 
             resultado = stmt.executeUpdate();
             if (resultado == 0) {
@@ -147,34 +134,27 @@ public class UsuarioDAO {
         return rta;
     }
 
-     public String BorrarUsuario(UsuarioDTO BorrarUsu)
-    {
-       //boolean resul = false;
-       String rta="";
-        try 
-        {
+    public String BorrarUsuario(UsuarioDTO BorrarUsu) {
+        //boolean resul = false;
+        String rta = "";
+        try {
             stmt = con.prepareStatement("DELETE FROM tb_usuarios  WHERE Id_Usuario=?");
-            stmt.setLong(1,BorrarUsu.getId_Usuario());
-            
-            
-                int resultado = stmt.executeUpdate();
-                    if(resultado==0)
-                    {
-                        //resul=false;
-                        rta="Fallo al eliminar";
-                    }
-                    else
-                        {
-                         rta="Registro eliminado Exitosamente";
-                        }   
-        }
-        catch (SQLException sqle) 
-            { 
-                rta=sqle.getMessage();
+            stmt.setLong(1, BorrarUsu.getId_Usuario());
+
+            int resultado = stmt.executeUpdate();
+            if (resultado == 0) {
+                //resul=false;
+                rta = "Fallo al eliminar";
+            } else {
+                rta = "Registro eliminado Exitosamente";
             }
-    return rta;
+        } catch (SQLException sqle) {
+            rta = sqle.getMessage();
+        }
+        return rta;
     }
-         public UsuarioDTO consultarUnRegistro1(int id)throws SQLException, MyException {
+
+    public UsuarioDTO consultarUnRegistro1(int id) throws SQLException, MyException {
         UsuarioDTO usdto = null;
         stmt = con.prepareStatement("SELECT Id_usuario, TipoDocumento, Usuario, Nombres, Apellidos,FechaDeNacimiento, LugarDeNacimiento, Direccion, TelefonoFijo, Celular, Ciudad,Cargo, Role, Contrasena, Email user from tb_usuarios where Id_usuario= ?");
         stmt.setInt(1, id);
@@ -205,12 +185,28 @@ public class UsuarioDAO {
         return usdto;
     }
 
-         
-         
+    public UsuarioDTO ConsultarUnUsuario(String num1) {
 
+        String DocUsu = (num1);
+        UsuarioDTO usuario = new UsuarioDTO();
+        try {
+            stmt = con.prepareStatement("SELECT   * FROM tb_usuarios where Nombres =? ");
+            stmt.setString(1, DocUsu);
+            rs = stmt.executeQuery();
+            usuario.setNombres("noExiste");
+            while (rs.next()) {
 
-    private PreparedStatement setInt(int i, long id_Usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                usuario.setId_Usuario(rs.getLong("Id_Usuario"));
+                usuario.setTipoDocumento(rs.getInt("TipoDocumento"));
+                usuario.setNombres(rs.getString("Nombres"));
+                usuario.setApellidos(rs.getString("Apellidos"));
+                usuario.setContrasena(rs.getString("Contrasena"));
+                usuario.setEmail(rs.getString("Email"));
+                usuario.setRole(rs.getInt("Role"));
+
+            }
+        } catch (SQLException sql) {
+        }
+        return usuario;
     }
-
 }

@@ -21,10 +21,12 @@
 	</head>
 	<body>
 		<main>
-			<div id="logo"><h1> <IMG SRC="imagenes/gesticom.png" height="80" width="80"></h1></div>
-			<div id="baner"><h1> <IMG SRC="imagenes/baner.png" height="100" width="800"></h1></div>
-			<div id="contenido">	
-					<nav>
+                    <div id="logo"><h1> <IMG SRC="imagenes/gesticom.png" height="80" width="100"></h1></div>
+                    <div id="baner"><h1> <IMG SRC="imagenes/baner.png" height="100" width="800"></h1></div>
+                    <div id="contenido">	
+                    <div id="header">
+
+        		<nav>
 	            	</nav>
                             <!-- prueba3 -->
                             <!-- prueba Luis-->

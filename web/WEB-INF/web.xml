@@ -28,6 +28,10 @@
         <servlet-name>GestionSolicitudes</servlet-name>
         <servlet-class>Controlador.GestionSolicitudes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Claves</servlet-name>
+        <servlet-class>Controlador.Claves</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GestionUsuarios</servlet-name>
         <url-pattern>/GestionUsuarios</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>GestionSolicitudes</servlet-name>
         <url-pattern>/GestionSolicitudes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Claves</servlet-name>
+        <url-pattern>/Claves</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

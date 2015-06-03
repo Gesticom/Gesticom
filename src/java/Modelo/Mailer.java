@@ -39,6 +39,25 @@ try {
  message.addRecipient(Message.RecipientType.TO,new InternetAddress(para));
  message.setSubject(sujeto);
  message.setText(mensaje);
+
+ message.setContent("<img src='http://i62.tinypic.com/cn5le.png' border='0' alt='subir imagen' />"
+         +"</br>"+"<h3>Hola: "+para+"</h3>"
+         +"</br>"
+         + "</br>" 
+         +"Bienvenido a nuestro  sistema  GESTICOM.    "
+         + "</br>" 
+         + mensaje
+         +"</br>"
+         +"</br>    "
+         +"Atentamente,    "
+         +"</br>"
+         +"</br>"         
+         +"</br>"
+         +"El Equipo Gesticom.com"
+         
+         , "text/html");
+
+ 
  
  //3rd paso)send message
  Transport.send(message);
