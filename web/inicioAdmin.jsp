@@ -15,9 +15,12 @@
         <title>Bienvenido ADMINISTRADOR</title>
         <!-- InstanceEndEditable -->
 
+                
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery.validate.js"></script>
         <script type="text/javascript" src="js/additional-methods.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+                
         <!-- InstanceBeginEditable name="head" -->
         <!-- InstanceEndEditable -->
     </head>

@@ -35,7 +35,7 @@
                         </ol>
                     <section>
                         <br>
-	                  <form id="formularioRegistro" method="post"  action="GestionClaves">
+	                  <form id="formularioRegistro" method="post"  action="Claves">
 	                        <div id="registro">
 		                
                             	<table class="table table-bordered table-striped" border=3>
