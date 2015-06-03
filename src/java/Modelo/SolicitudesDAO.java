@@ -59,12 +59,13 @@ public class SolicitudesDAO {
         return listado;
     }
     
-    public ArrayList<SolicitudesDTO> ConsultarTodosuno() {
+    public SolicitudesDTO ConsultarTodosuno(int ConsultarSolicitud) {
 
-        ArrayList<SolicitudesDTO> listado = new ArrayList<SolicitudesDTO>();
+        SolicitudesDTO unsolicitudesnew = new SolicitudesDTO();
 
         try {
             stmt = conn.prepareStatement("select sol.Id_Solicitud as idsol,"+
+                    
                      "sol.Vacantes, "+
                      "sol.Perfil,"+
                      "cam.Campana,"+
@@ -78,11 +79,12 @@ public class SolicitudesDAO {
                       " join tb_departamento dep on sol.Id_Departamento = dep.Id_Departamento"+
                       " join tb_campana cam on sol.Id_Campana = cam.Id_Campana"+
                       " join tb_ciudad ciu on sol.Id_Ciudad = ciu.Id_Ciudad"+
-                      " join tb_estado est on sol.Id_Estado = est.Id_Estado;");
+                      " join tb_estado est on sol.Id_Estado = est.Id_Estado where Id_Solicitud= ?;");
+            stmt.setInt(1,ConsultarSolicitud);
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                 SolicitudesDTO unsolicitudesnew = new SolicitudesDTO();
+                 
                  unsolicitudesnew.setId_Solicitud(rs.getInt("idsol"));
                  unsolicitudesnew.setVacantes(rs.getInt("Vacantes"));
                  unsolicitudesnew.setPerfil(rs.getString("Perfil"));
@@ -92,13 +94,13 @@ public class SolicitudesDAO {
                  unsolicitudesnew.setCiudad(rs.getString("Ciudad"));
                  unsolicitudesnew.setDepartamento(rs.getString("Departamento"));
                  unsolicitudesnew.setEstado(rs.getString("Estado"));
-                 listado.add(unsolicitudesnew);
+                 
             }
 
         } catch (SQLException sqle) {
 
         }
-        return listado;
+        return unsolicitudesnew;
     }
     
            
@@ -150,8 +152,6 @@ public class SolicitudesDAO {
             stmt.setInt(7,ActualizarSolicitud.getId_Departamento());
             stmt.setInt(8,ActualizarSolicitud.getId_Campana());
             stmt.setInt(9,ActualizarSolicitud.getId_Solicitud()); 
-            
-            
 
             resultado = stmt.executeUpdate();
             if (resultado == 0) {

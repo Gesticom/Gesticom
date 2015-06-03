@@ -31,13 +31,11 @@
                         <!--  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a> -->
                         <li><a class="btn btn-primary" href="solicitudesListar1.jsp"><i class="fa fa-user fa-fw"></i> Solicitudes</a>
                             <ul>
-                                <li><a href="solicitudesCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="solicitudesListar1.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                               <li><a href="solicitudesListar1.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="btn btn-primary" href="hojasDeVidaListar.jsp"><i class="fa fa-globe fa-fw"></i> Hojas de Vida</a>
                             <ul>
-                                <li><a href="hojasDeVidaCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="hojasDeVidaListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>

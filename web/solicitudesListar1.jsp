@@ -93,6 +93,7 @@
                                 <td>Opciones</td>
                         </thead>        
                         <tbody>
+                            <tr>
                             <%
                                         SolicitudesDTO ObjDtoC = new SolicitudesDTO();
                                         SolicitudesDAO ObjDaoC = new SolicitudesDAO();
@@ -108,13 +109,14 @@
                                             out.print("<td>"+ listado.get(a).getEstado()+"</td>");
                                                                                     
                                     %>
+                               
 
                         <td><a href='solicitudesDetallar.jsp?Boton=DetallarSol&pos=<%=listado.get(a).getId_Solicitud()%>'  >  <center><img src="imagenes/Detallar.png" width="24" height="24" alt="actaul" title='Usted quiere ver detalladamente  a : <%=listado.get(a).getCampana()%> ' onclick="return  PreguntaValidaDetallado('<%=listado.get(a).getCampana()%>')"/>
                             </a>
                              <a href='solicitudesEditar1.jsp?Boton=EditarSol&pos=<%=listado.get(a).getId_Solicitud()%>'>  <img src="imagenes/actualizar.png" width="24" height="24" alt="actaul" title='Usted quiere actualizar a :  <%=listado.get(a).getCampana()%> ' onclick="return  PreguntaValidaActualizar('<%=listado.get(a).getCampana()%>')"/></center>
                                         </a>
                         </td>
-                       
+                        </tr>
                                 <%
                                     }
                                 %>
