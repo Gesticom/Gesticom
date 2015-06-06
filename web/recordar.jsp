@@ -64,8 +64,8 @@
                                     ${error}
                                     <%}%>
                                 </div>                             
-                                <div id="pie"><a href="AboutGesticom.jsp">Versiï¿½n 1.0 | COPYRIGHT  	&copy;2014 GESTICOM | Contï¿½ctenos: 3133163023</a></div>
-                              <div id="iconos">Siguenos tambiï¿½n en  <IMG SRC="imagenes/iconos.png" height="30" width="116"></div>
+                                <div id="pie"><a href="AboutGesticom.jsp">Versión 1.0 | COPYRIGHT  	&copy;2014 GESTICOM | Contï¿½ctenos: 3133163023</a></div>
+                              <div id="iconos">Siguenos también en  <IMG SRC="imagenes/iconos.png" height="30" width="116"></div>
 
 <!--
 

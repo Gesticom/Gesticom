@@ -18,7 +18,7 @@
         <link href="resources/syntax/shCore.css" rel="stylesheet" type="text/css"/>
 
         <!-- InstanceBeginEditable name="doctitle" -->
-        <title>Bienvenido ADMINISTRADOR</title>
+        <title>Bienvenido AUXILIAR</title>
         <!-- InstanceEndEditable -->
 
         <script type="text/javascript" src="js/jquery.js"></script>
@@ -46,16 +46,17 @@
                 <div id="header">
                     <ul class="nav">
                         <!--  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a> -->
-                        <li><a class="btn btn-primary" href="solicitudesListar.jsp"><i class="fa fa-user fa-fw"></i> Solicitudes</a>
+                        <li><a class="btn btn-primary" href="hojasDeVidaListar.jsp"><i class="fa fa-user fa-fw"></i> Solicitudes</a>
                             <ul>
-                                <li><a href="solicitudesCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="solicitudesListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                                <li><a href="hojasDeVidaCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
+                                <li><a href="hojasDeVidaListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
                         <li><a class="btn btn-primary" href="hojasDeVidaListar.jsp"><i class="fa fa-globe fa-fw"></i> Hojas de Vida</a>
                             <ul>
                                 <li><a href="hojasDeVidaCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="hojasDeVidaListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                                <li><a href="hojasDeVidaCargar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Carga</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -64,10 +65,10 @@
                     <!-- InstanceBeginEditable name="EditRegionSection" -->
                     <ol class="breadcrumb">
                         <div id="idioma"> <span class="fa fa-flag"><a href="index.jsp">    Español</a><a href="indexIngles.jsp"> / English</a> </div>
-                        <div id="Usuario"><a class="well-sm">ADMINISTRADOR </a><a href="LogOut">Cerrar Sesión</a></div>
+                        <div id="Usuario"><a class="well-sm">AUXILIAR </a><a href="LogOut">Cerrar Sesión</a></div>
                         <li><a href="index.jsp">Inicio</a></li>
-                        <li><a href="inicioAdmin.jsp">Usuarios</a></li>
-                        <li href="usuariosListar.jsp" class="active">Listar</li>
+                        <li><a href="inicioAuxiliar.jsp">Hojas de Vida</a></li>
+                        <li href="HojasDeVidaListar.jsp" class="active">Listar</li>
                     </ol>
 
                    

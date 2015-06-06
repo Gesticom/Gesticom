@@ -40,6 +40,7 @@
                             <ul>
                                 <li><a href="hojasDeVidaCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="hojasDeVidaListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                                <li><a href="hojasDeVidaCargar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Carga</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -48,10 +49,10 @@
                     <!-- InstanceBeginEditable name="EditRegionSection" -->
                     <ol class="breadcrumb">
                         <div id="idioma"> <span class="fa fa-flag"><a href="index.jsp">    Español</a><a href="indexIngles.jsp"> / English</a> </div>
-                        <div id="Usuario"><a class="well-sm">ADMINISTRADOR </a><a href="LogOut">Cerrar Sesión</a></div>
+                        <div id="Usuario"><a class="well-sm">AUXILIAR </a><a href="LogOut">Cerrar Sesión</a></div>
                         <li><a href="index.jsp">Inicio</a></li>
-                        <li><a href="inicioAdmin.jsp">Usuarios</a></li>
-                        <li href="usuariosCrear.jsp" class="active">Crear</li>
+                        <li><a href="hojasDeVidaListar.jsp">Hojas de Vida</a></li>
+                        <li href="hojasDeVidaCrear.jsp" class="active">Crear</li>
                     </ol>
                     <script type="text/javascript">
                         $(function () {
