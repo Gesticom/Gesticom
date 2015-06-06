@@ -190,7 +190,7 @@ public class UsuarioDAO {
         String DocUsu = (num1);
         UsuarioDTO usuario = new UsuarioDTO();
         try {
-            stmt = con.prepareStatement("SELECT   * FROM tb_usuarios where Nombres =? ");
+            stmt = con.prepareStatement("SELECT * FROM tb_usuarios where Nombres =? ");
             stmt.setString(1, DocUsu);
             rs = stmt.executeQuery();
             usuario.setNombres("noExiste");

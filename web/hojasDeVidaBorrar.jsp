@@ -38,6 +38,7 @@
                             <ul>
                                 <li><a href="hojasDeVidaCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="hojasDeVidaListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                                <li><a href="cargahojasDeVida.jsp"><i class="fa fa-file-text-o fa-fw"></i> Carga</a></li>
                             </ul>
                         </li>
                     </ul>

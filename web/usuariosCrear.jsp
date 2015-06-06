@@ -1,3 +1,5 @@
+<%@page import="Modelo.CargosDTO"%>
+<%@page import="Modelo.CargosDAO"%>
 <%@page import="Modelo.RoleDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Modelo.RoleDAO"%>
@@ -106,8 +108,6 @@
                                 <td><label for="Id_Usuario">Número Documento:</label>
                                 <td><input type="text" name="Id_Usuario" id="Id_Usuario"  maxlength="15" required tabindex="2"></td><tr>
 
-                                <td><label for="Usuario">Usuario:</label>
-                                <td><input type="text" name="Usuario" id="Usuario"  maxlength="15" required tabindex="2"></td><tr>
 
                                     <td><label for="Nombres">Nombres:</label>
                                     <td><input name="Nombres" id="Nombres" type="text"  required maxlength="45" tabindex="3">
@@ -120,8 +120,10 @@
                                     <td><input name="LugarDeNacimiento" id="LugarDeNacimiento" type="text"  required maxlength="10" tabindex="6"></td><tr>
                                     <td><label for="TelefonoFijo">Teléfono:</label>
                                     <td><input name="TelefonoFijo" id="TelefonoFijo" type="text"  required tabindex="7">
+                                        
                                     <td><label for="Celular">Celular:</label>
                                     <td><input name="Celular" id="Celular" type="text"  required maxlength="50" tabindex="8"></td><tr>
+                                    
                                     <td><label for="Direccion">Dirección:</label>
                                     <td><input name="Direccion" id="Direccion" type="text"  required maxlength="45" tabindex="9">
                                     <td><label for="Ciudad">Ciudad:</label>
@@ -132,6 +134,18 @@
                                     </select></td><tr>
                                     <td><label for="Cargo">Cargo:</label>
                                     <td><select name="Cargo" tabindex="12">
+                                        <%
+                                            CargosDAO ObjDaoCargo = new CargosDAO();
+                                            ArrayList<CargosDTO> listadoCargo = new ArrayList<CargosDTO>();
+                                            listadoCargo = ObjDaoCargo.ConsultarTodos();
+                                            for (int a=0; a <listadoCargo.size(); a++){
+                                        %>
+
+                                        <option value="<%= listadoCargo.get(a).getId_Cargo()%>">
+                                        <%= listadoCargo.get(a).getCargo()%></option>
+                                        <% }%>
+                                        </select></td>
+
                                             
                                         </td>
                                     <td><label for="Role">Role:</label>
@@ -149,10 +163,11 @@
                                         </select></td>
                                    <tr>
 
-                                    <td><label for="clave">Digite la contraseña:</label>
-                                    <td><input name="clave" id="clave" type="password" tabindex="13" required> <br>
-                                    <td><label for="clave">Repita la contraseña:</label>
-                                    <td><input name="clave1" id="clave1" type="password" tabindex="14" required> <br>
+                                <td><label for="Usuario">Usuario:</label>
+                                <td><input type="text" name="Usuario" id="Usuario"  maxlength="10" required tabindex="2">
+                                    
+                                <td><label for="clave">Digite la contraseña:</label>
+                                <td><input name="clave" id="clave" type="password" tabindex="13" required> </td><tr>
 
 
                             </table>  
