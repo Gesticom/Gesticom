@@ -5,8 +5,8 @@
 --%>
 
 
-<%@page import="Modelo.HojasDeVidaDTO"%>
-<%@page import="Modelo.HojasDeVidaDAO"%>
+<%@page import="Modelo.CiudadesDTO"%>
+<%@page import="Modelo.CiudadesDAO"%>
 <%@page import="jxl.Cell"%>
 <%@page import="jxl.Sheet"%>
 <%@page import="jxl.Workbook"%>
@@ -34,11 +34,9 @@
                 <tr>
                 <%
         
-                HojasDeVidaDAO hojasdevidadao = new HojasDeVidaDAO();
-                HojasDeVidaDTO hojasdevidadto = new HojasDeVidaDTO();
-                
-                
-                
+                CiudadesDAO ciudadesdao = new CiudadesDAO();
+                CiudadesDTO ciudadesdto = new CiudadesDTO();
+
                 for(int a1 = 0; a1<hoja1.getColumns() ;a1++){
                 Cell actual = hoja1.getCell(a1,0);
                 out.print("<th>"+actual.getContents()+"</th>");    
@@ -58,18 +56,9 @@
                               celdas[a2]= "" + actual.getContents() ;
                               out.print("<td>"+actual.getContents()+"</td>");  
                             }
-                 hojasdevidadto.setId_Cedula(Integer.parseInt(celdas[0]));
-                 hojasdevidadto.setNombres(celdas[1]);
-                 hojasdevidadto.setApellidos(celdas[2]);
-                 hojasdevidadto.setDireccion(celdas[3]);
-                 hojasdevidadto.setTelefono(celdas[4]);
-                 hojasdevidadto.setCelular(celdas[5]);
-                 hojasdevidadto.setFechaNacimiento(celdas[6]);
-                 hojasdevidadto.setCiudadNacimiento(Integer.parseInt(celdas[7]));
-                 hojasdevidadto.setCiudadResidencia(Integer.parseInt(celdas[8]));
-                 hojasdevidadto.setEstadoCivil(celdas[9]);
-                 hojasdevidadto.setNoHijos(Integer.parseInt(celdas[10]));
-                 String Salida =  hojasdevidadao.IngresarHoja(hojasdevidadto);
+                 ciudadesdto.setId_Ciudad(Integer.parseInt(celdas[0]));
+                 ciudadesdto.setCiudad(celdas[1]);
+                 String Salida = ciudadesdao.IngresarCiudad(ciudadesdto);
                  
                  if(Salida.equals("Usuario Registrado")){
                  %>

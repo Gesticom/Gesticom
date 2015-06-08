@@ -5,7 +5,7 @@
  */
 package Modelo;
 
-import Modelo.CiudadDTO;
+import Modelo.CiudadesDTO;
 import Modelo.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

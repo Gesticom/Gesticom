@@ -40,7 +40,7 @@ public class GestionUsuarios extends HttpServlet {
 
             if (request.getParameter("Boton").equals("Usuario Nuevo")) {
                 objDto.setId_Usuario(Long.parseLong(request.getParameter("Id_Usuario")));
-                objDto.setUsuario(request.getParameter("Usuario"));
+                objDto.setUsuario(request.getParameter("Usuario1"));
                 objDto.setTipoDocumento(Integer.parseInt(request.getParameter("TipoDocumento")));
                 objDto.setNombres(request.getParameter("Nombres"));
                 objDto.setApellidos(request.getParameter("Apellidos"));
@@ -53,6 +53,7 @@ public class GestionUsuarios extends HttpServlet {
                 objDto.setCargo(Integer.parseInt(request.getParameter("Cargo")));
                 objDto.setRole(Integer.parseInt(request.getParameter("Role")));
                 objDto.setContrasena(request.getParameter("clave"));
+                objDto.setEmail(request.getParameter("Email"));
                 String Estado = objDao.IngresarUsuario(objDto);
                 RequestDispatcher Rd = request.getRequestDispatcher("usuariosCrear.jsp?mensaje=" + Estado);
                 Rd.forward(request, response);

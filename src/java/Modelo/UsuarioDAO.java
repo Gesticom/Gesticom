@@ -94,7 +94,7 @@ public class UsuarioDAO {
             stmt.setInt(12, InsertarUsuario.getCargo());
             stmt.setInt(13, InsertarUsuario.getRole());
             stmt.setString(14, InsertarUsuario.getContrasena());
-            stmt.setString(14, InsertarUsuario.getEmail());
+            stmt.setString(15, InsertarUsuario.getEmail());
 
             int resultado = stmt.executeUpdate();
             if (resultado == 0) {

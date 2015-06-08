@@ -29,44 +29,34 @@
     <body>
         <main>
             <div id="logo"><h1> <IMG SRC="imagenes/gesticom.png" height="80" width="80"></h1></div>
-            <div id="baner"><h1> <IMG SRC="imagenes/baner.png" height="100" width="760"></h1></div>
+            <div id="baner"><h1> <IMG SRC="imagenes/baner.png" height="100" width="800"></h1></div>
             <div id="contenido">	
                 <div id="header">
                     <ul class="nav">
                         <!--  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a> -->
-                        <li><a class="btn btn-primary" href="usuariosListar.jsp"><i class="fa fa-user fa-fw"></i> Usuarios</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-user fa-fw"></i> Usuarios</a>
                             <ul>
                                 <li><a href="usuariosCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="usuariosListar.jsp"><i class="fa fa-pencil fa-fw"></i> Editar</a></li>
-                                <li><a href="usuariosListar.jsp"><i class="fa fa-trash-o fa-fw"></i> Borrar</a></li>
                                 <li><a href="usuariosListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="ciudadesListar.jsp"><i class="fa fa-globe fa-fw"></i> Ciudades</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-globe fa-fw"></i> Ciudades</a>
                             <ul>
                                 <li><a href="ciudadesCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="ciudadesListar.jsp"><i class="fa fa-pencil fa-fw"></i> Editar</a></li>
-                                <li><a href="ciudadesListar.jsp"><i class="fa fa-trash-o fa-fw"></i> Borrar</a></li>
                                 <li><a href="ciudadesListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="campanasListar.jsp"><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
                             <ul>
                                 <li><a href="campanasCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="campanasListar.jsp"><i class="fa fa-pencil fa-fw"></i> Editar</a></li>
-                                <li><a href="campanasListar.jsp"><i class="fa fa-trash-o fa-fw"></i> Borrar</a></li>
                                 <li><a href="campanasListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="solicitudesListar.jsp"><i class="fa fa-users fa-fw"></i> Solicitudes</a>
+                        <li><a class="btn btn-primary"><i class="fa fa-users fa-fw"></i> Solicitudes</a>
                             <ul>
                                 <li><a href="SolicitudesCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="solicitudesListar.jsp"><i class="fa fa-pencil fa-fw"></i> Editar</a></li>
-                                <li><a href="solicitudesListar.jsp"><i class="fa fa-trash-o fa-fw"></i> Borrar</a></li>
                                 <li><a href="solicitudesListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
-                        <li><a class="btn btn-primary" href="profesional.jsp"><i class="fa fa-user fa-fw"></i> Profesional</a>
-                        <li><a class="btn btn-primary" href="competencias.jsp"><i class="fa fa-user fa-fw"></i> Competencias</a>
                     </ul>
                 </div>
                 <section>
@@ -109,70 +99,74 @@
                                 <td><input type="text" name="Id_Usuario" id="Id_Usuario"  maxlength="15" required tabindex="2"></td><tr>
 
 
-                                    <td><label for="Nombres">Nombres:</label>
-                                    <td><input name="Nombres" id="Nombres" type="text"  required maxlength="45" tabindex="3">
-                                    <td><label for="Apellidos">Apellidos:</label> 
-                                    <td><input name="Apellidos" id="Apellidos" type="text"  required maxlength="45" tabindex="4"></td><tr>
+                                <td><label for="Nombres">Nombres:</label>
+                                <td><input name="Nombres" id="Nombres" type="text"  required maxlength="45" tabindex="3">
+                                <td><label for="Apellidos">Apellidos:</label> 
+                                <td><input name="Apellidos" id="Apellidos" type="text"  required maxlength="45" tabindex="4"></td><tr>
 
-                                    <td><label for="FechaDeNacimiento">Fecha Nacimiento:</label>
-                                    <td><input name="FechaDeNacimiento" id="FechaDeNacimiento" type="date" tabindex="5">
-                                    <td><label for="LugarDeNacimiento">Lugar Nacimiento:</label>
-                                    <td><input name="LugarDeNacimiento" id="LugarDeNacimiento" type="text"  required maxlength="10" tabindex="6"></td><tr>
-                                    <td><label for="TelefonoFijo">Teléfono:</label>
-                                    <td><input name="TelefonoFijo" id="TelefonoFijo" type="text"  required tabindex="7">
-                                        
-                                    <td><label for="Celular">Celular:</label>
-                                    <td><input name="Celular" id="Celular" type="text"  required maxlength="50" tabindex="8"></td><tr>
-                                    
-                                    <td><label for="Direccion">Dirección:</label>
-                                    <td><input name="Direccion" id="Direccion" type="text"  required maxlength="45" tabindex="9">
-                                    <td><label for="Ciudad">Ciudad:</label>
-                                    <td><select name="Ciudad" tabindex="11">
-                                            <option value="1">Bogotá</option>
-                                            <option value="2">Medellín</option>
-                                            <option value="3">Cali</option>
-                                    </select></td><tr>
-                                    <td><label for="Cargo">Cargo:</label>
-                                    <td><select name="Cargo" tabindex="12">
+                                <td><label for="FechaDeNacimiento">Fecha Nacimiento:</label>
+                                <td><input name="FechaDeNacimiento" id="FechaDeNacimiento" type="date" tabindex="5">
+                                <td><label for="LugarDeNacimiento">Lugar Nacimiento:</label>
+                                <td><input name="LugarDeNacimiento" id="LugarDeNacimiento" type="text"  required maxlength="10" tabindex="6"></td><tr>
+                                <td><label for="TelefonoFijo">Teléfono:</label>
+                                <td><input name="TelefonoFijo" id="TelefonoFijo" type="text"  required tabindex="7">
+
+                                <td><label for="Celular">Celular:</label>
+                                <td><input name="Celular" id="Celular" type="text"  required maxlength="50" tabindex="8"></td><tr>
+
+                                <td><label for="Direccion">Dirección:</label>
+                                <td><input name="Direccion" id="Direccion" type="text"  required maxlength="45" tabindex="9">
+                                <td><label for="Ciudad">Ciudad:</label>
+                                <td><select name="Ciudad" tabindex="11">
+                                        <option value="1">Bogotá</option>
+                                        <option value="2">Medellín</option>
+                                        <option value="3">Cali</option>
+                                </select></td><tr>
+                                <td><label for="Cargo">Cargo:</label>
+                                <td><select name="Cargo" tabindex="12">
+                                    <%
+                                        CargosDAO ObjDaoCargo = new CargosDAO();
+                                        ArrayList<CargosDTO> listadoCargo = new ArrayList<CargosDTO>();
+                                        listadoCargo = ObjDaoCargo.ConsultarTodos();
+                                        for (int a=0; a <listadoCargo.size(); a++){
+                                    %>
+
+                                    <option value="<%= listadoCargo.get(a).getId_Cargo()%>">
+                                    <%= listadoCargo.get(a).getCargo()%></option>
+                                    <% }%>
+                                    </select></td>
+                                  </td>
+                                <td><label for="Role">Role:</label>
+                                <td><select name="Role" tabindex="13">
                                         <%
-                                            CargosDAO ObjDaoCargo = new CargosDAO();
-                                            ArrayList<CargosDTO> listadoCargo = new ArrayList<CargosDTO>();
-                                            listadoCargo = ObjDaoCargo.ConsultarTodos();
-                                            for (int a=0; a <listadoCargo.size(); a++){
+                                            RoleDAO ObjDaoRole = new RoleDAO();
+                                            ArrayList<RoleDTO> listadoRole = new ArrayList<RoleDTO>();
+                                            listadoRole = ObjDaoRole.ConsultarTodos();
+                                            for (int a=0; a <listadoRole.size(); a++){
                                         %>
 
-                                        <option value="<%= listadoCargo.get(a).getId_Cargo()%>">
-                                        <%= listadoCargo.get(a).getCargo()%></option>
+                                        <option value="<%= listadoRole.get(a).getId_Role()%>">
+                                            <%= listadoRole.get(a).getRole()%></option>
                                         <% }%>
-                                        </select></td>
+                                    </select></td>
+                               <tr>
 
-                                            
-                                        </td>
-                                    <td><label for="Role">Role:</label>
-                                    <td><select name="Role" tabindex="13">
-                                            <%
-                                                RoleDAO ObjDaoRole = new RoleDAO();
-                                                ArrayList<RoleDTO> listadoRole = new ArrayList<RoleDTO>();
-                                                listadoRole = ObjDaoRole.ConsultarTodos();
-                                                for (int a=0; a <listadoRole.size(); a++){
-                                            %>
-                                            
-                                            <option value="<%= listadoRole.get(a).getId_Role()%>">
-                                                <%= listadoRole.get(a).getRole()%></option>
-                                            <% }%>
-                                        </select></td>
-                                   <tr>
+                            <td><label for="Usuario1">Usuario:</label>
+                            <td><input name="Usuario1" id="Usuario1" type="text"  required maxlength="45" tabindex="3">
 
-                                <td><label for="Usuario">Usuario:</label>
-                                <td><input type="text" name="Usuario" id="Usuario"  maxlength="10" required tabindex="2">
-                                    
-                                <td><label for="clave">Digite la contraseña:</label>
-                                <td><input name="clave" id="clave" type="password" tabindex="13" required> </td><tr>
+                            <td><label for="Email">Email:</label>
+                            <td><input name="Email" id="Email" type="text" tabindex="13" required> </td><tr>
+
+                            <td><label for="clave">Digite la contraseña:</label>
+                            <td><input name="clave" id="clave" type="password" tabindex="13" required> </td>
+
+                            <td><label for="Reclave">Repite la contraseña:</label>
+                            <td><input name="Reclave" id="reclave" type="password" tabindex="13" required> </td><tr>
 
 
                             </table>  
-                            <input type="submit" class="btn btn-success" name="Boton" value="Usuario Nuevo" />
-                            <input type="submit" class="btn btn-success" name="Boton" value="Cancelar" />
+                            <input align ="center" type="submit" class="btn btn-success" name="Boton" value="Usuario Nuevo" />
+                            <input align ="center" type="submit" class="btn btn-success" name="Boton" value="Cancelar" />
 
                         </div>                        
                     </form>
