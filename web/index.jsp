@@ -10,7 +10,7 @@
             <link rel="stylesheet" type="text/css" href="css/estilos.css">
 		    <link href="imagenes/favicon.ico" rel="icon" type="image/x-icon">
 
-		<title>Interfaz de Usuario</title>
+		<title>Interfaz de Usuario GESTICOM - JUNIO 8 2015</title>
 
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.validate.js"></script>
