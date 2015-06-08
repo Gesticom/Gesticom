@@ -9,7 +9,7 @@ package Modelo;
  *
  * @author RicardoAlonso
  */
-public class CiudadDTO {
+public class CiudadesDTO {
     private int Id_Ciudad;
     private String Ciudad;
 
@@ -41,12 +41,12 @@ public class CiudadDTO {
         this.Ciudad = Ciudad;
     }
 
-    public CiudadDTO(int Id_Ciudad, String Ciudad) {
+    public CiudadesDTO(int Id_Ciudad, String Ciudad) {
         this.Id_Ciudad = Id_Ciudad;
         this.Ciudad = Ciudad;
     }
 
-    public CiudadDTO() {
+    public CiudadesDTO() {
     }
     
     

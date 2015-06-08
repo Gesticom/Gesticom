@@ -33,8 +33,12 @@
         <servlet-class>Controlador.Claves</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>NewServlet</servlet-name>
-        <servlet-class>Controlador.NewServlet</servlet-class>
+        <servlet-name>CargaArchivosHV</servlet-name>
+        <servlet-class>Controlador.CargaArchivosHV</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CargaArchivosCiudades</servlet-name>
+        <servlet-class>Controlador.CargaArchivosCiudades</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GestionUsuarios</servlet-name>
@@ -69,8 +73,12 @@
         <url-pattern>/Claves</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>NewServlet</servlet-name>
-        <url-pattern>/NewServlet</url-pattern>
+        <servlet-name>CargaArchivosHV</servlet-name>
+        <url-pattern>/CargaArchivosHV</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CargaArchivosCiudades</servlet-name>
+        <url-pattern>/CargaArchivosCiudades</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

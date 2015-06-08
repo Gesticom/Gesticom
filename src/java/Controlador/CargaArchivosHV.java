@@ -25,7 +25,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  *
  * @author Josarta
  */
-public class UploadFile extends HttpServlet {
+public class CargaArchivosHV extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -76,7 +76,7 @@ public class UploadFile extends HttpServlet {
         {
         request.setAttribute("message", "Este servlet solo maneja petición de carga de archivos");
         }
-        request.getRequestDispatcher("/result.jsp").forward(request, response);
+        request.getRequestDispatcher("/resultHojasDeVida.jsp").forward(request, response);
         }
     }
 

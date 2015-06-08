@@ -39,11 +39,10 @@
                                 <li><a href="usuariosListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="hojasDeVidaListar.jsp"><i class="fa fa-globe fa-fw"></i> Hojas de Vida</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-globe fa-fw"></i> Ciudes</a>
                             <ul>
-                                <li><a href="hojasDeVidaCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="hojasDeVidaListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
-                                <li><a href="hojasDeVidaCargar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Carga</a></li>
+                                <li><a href="ciudadesListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                                <li><a href="ciudadesCargar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Carga</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -59,7 +58,7 @@
                     </ol>
 
                     <h3>Elija un archivo para subir en servidor</h3>
-                    <form action="CargaArchivosHV" method="post" enctype="multipart/form-data">
+                    <form action="CargaArchivosCiudades" method="post" enctype="multipart/form-data">
                             <input type="file" name="file" /> 
                             <input type="submit" value="upload" />
                     </form>
