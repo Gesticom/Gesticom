@@ -68,24 +68,25 @@
                             <%
                                         SolicitudesDTO ObjDtoC = new SolicitudesDTO();
                                         SolicitudesDAO ObjDaoC = new SolicitudesDAO();
-                                        ArrayList<SolicitudesDTO> listado = new ArrayList<SolicitudesDTO>();
-                                        listado = ObjDaoC.ConsultarTodosuno();
+                                        ObjDtoC= ObjDaoC.ConsultarTodosuno(Integer.parseInt(request.getParameter("pos")));
+                                        
+                                        
 
-                                        for (int a = 0; a < listado.size(); a++) {
-                                            out.print("<tr><td>No Solicitud</td><td>" + listado.get(a).getId_Solicitud()+ "</td></tr>");
-                                            out.print("<tr><td>Vacantes</td><td>" + listado.get(a).getVacantes()+ "</td></tr>");
-                                            out.print("<tr><td>Cargo</td><td>" + listado.get(a).getCargo()+ "</td></tr>");
-                                            out.print("<tr><td>Fecha</td><td>"+ listado.get(a).getFechaDeInicio()+ "</td></tr>");
-                                            out.print("<tr><td>Ciudad</td><td>"+ listado.get(a).getCiudad()+"</td></tr>");
-                                            out.print("<tr><td>Perfil</td><td>"+ listado.get(a).getPerfil()+"</td></tr>");
-                                            out.print("<tr><td>Estado</td><td>"+ listado.get(a).getEstado()+"</td></tr>");
-                                            out.print("<tr><td>Departamento</td><td>"+ listado.get(a).getDepartamento()+ "</td></tr>");
-                                            out.print("<tr><td>Campana</td><td>" + listado.get(a).getCampana()+ "</td></tr>");                                        
+                                        
+                                            out.print("<tr><td>No Solicitud</td><td>" + ObjDtoC.getId_Solicitud()+ "</td></tr>");
+                                            out.print("<tr><td>Vacantes</td><td>" + ObjDtoC.getVacantes()+ "</td></tr>");
+                                            out.print("<tr><td>Cargo</td><td>" + ObjDtoC.getCargo()+ "</td></tr>");
+                                            out.print("<tr><td>Fecha</td><td>"+ ObjDtoC.getFechaDeInicio()+ "</td></tr>");
+                                            out.print("<tr><td>Ciudad</td><td>"+ ObjDtoC.getCiudad()+"</td></tr>");
+                                            out.print("<tr><td>Perfil</td><td>"+ ObjDtoC.getPerfil()+"</td></tr>");
+                                            out.print("<tr><td>Estado</td><td>"+ ObjDtoC.getEstado()+"</td></tr>");
+                                            out.print("<tr><td>Departamento</td><td>"+ ObjDtoC.getDepartamento()+ "</td></tr>");
+                                            out.print("<tr><td>Campana</td><td>" + ObjDtoC.getCampana()+ "</td></tr>");                                        
                                     %>
                                     
                        
                                 <%
-                                    }
+                                    
                                 %>
                                 <%
 

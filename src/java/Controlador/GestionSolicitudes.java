@@ -45,45 +45,48 @@ public class GestionSolicitudes extends HttpServlet {
                 objDto.setFechaDeInicio(request.getParameter("FechaDeInicio"));
                 objDto.setId_Ciudad(Integer.parseInt(request.getParameter("Id_Ciudad")));
                 objDto.setPerfil(request.getParameter("Perfil"));
+                objDto.setId_Estado(Integer.parseInt(request.getParameter("Id_Estado")));
                 objDto.setId_Departamento(Integer.parseInt(request.getParameter("Id_Departamento")));
                 objDto.setId_Campana(Integer.parseInt(request.getParameter("Id_Campana")));
-                
+
                 String Estado = objDao.IngresarSolicitud(objDto);
                 RequestDispatcher Rd = request.getRequestDispatcher("solicitudesCrear.jsp?mensaje=" + Estado);
                 Rd.forward(request, response);
-                
-            }else if (request.getParameter("Boton").equals("BorrarSol") ){
+
+            } else if (request.getParameter("Boton").equals("BorrarSol")) {
                 objDto.setId_Solicitud(Integer.parseInt(request.getParameter("pos")));
-               
+
                 String Estado = objDao.BorrarSolicitud(objDto);
-              
-                request.setAttribute("mensaje",Estado);
-                 RequestDispatcher Rd = request.getRequestDispatcher("solicitudesListar.jsp");
+
+                request.setAttribute("mensaje", Estado);
+                RequestDispatcher Rd = request.getRequestDispatcher("solicitudesListar.jsp??mensaje=" + Estado);
                 Rd.forward(request, response);
-                
-            }else if (request.getParameter("Boton").equals("Actualizar") ){
+
+            } else if (request.getParameter("Boton").equals("Actualizar")) {
                 objDto.setId_Solicitud(Integer.parseInt(request.getParameter("Id_Solicitud")));
                 objDto.setVacantes(Integer.parseInt(request.getParameter("Vacantes")));
                 objDto.setId_Cargo(Integer.parseInt(request.getParameter("Id_Cargo")));
                 objDto.setFechaDeInicio(request.getParameter("FechaDeInicio"));
                 objDto.setId_Ciudad(Integer.parseInt(request.getParameter("Id_Ciudad")));
                 objDto.setPerfil(request.getParameter("Perfil"));
-                objDto.setId_Estado(Integer.parseInt(request.getParameter("Estado")));
+                objDto.setId_Estado(Integer.parseInt(request.getParameter("Id_Estado")));
                 objDto.setId_Departamento(Integer.parseInt(request.getParameter("Id_Departamento")));
                 objDto.setId_Campana(Integer.parseInt(request.getParameter("Id_Campana")));
 //                request.setAttribute("mensaje",Estado);
-                RequestDispatcher Rd = request.getRequestDispatcher("solicitudesListar1.jsp");
+                String Estado = objDao.ActualizarSolicitud(objDto);
+                RequestDispatcher Rd = request.getRequestDispatcher("solicitudesListar1.jsp?mensaje=" + Estado);
                 Rd.forward(request, response);
-                
+
 //                RequestDispatcher Rd = request.getRequestDispatcher("usuariosBorrar.jsp?mensaje=" + Estado);
 //                Rd.forward(request, response);
-            }else {
+            } else {
                 if (request.getParameter("Boton").equals("Cancelar")) {
                     RequestDispatcher ra = request.getRequestDispatcher("inicioPsicologo.jsp");
                     ra.forward(request, response);
 
+              
                 }
-            }
+            } 
         }
     }
 
