@@ -40,38 +40,35 @@
                 <div id="header">
                     <ul class="nav">
                         <!--  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a> -->
-                        <li><a class="btn btn-primary" href="usuariosListar.jsp"><i class="fa fa-user fa-fw"></i> Usuarios</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-user fa-fw"></i> Usuarios</a>
                             <ul>
                                 <li><a href="usuariosCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="usuariosListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="ciudadesListar.jsp"><i class="fa fa-globe fa-fw"></i> Ciudades</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-globe fa-fw"></i> Ciudades</a>
                             <ul>
                                 <li><a href="ciudadesCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="ciudadesListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="campanasListar.jsp"><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
                             <ul>
                                 <li><a href="campanasCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="campanasListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="solicitudesListar.jsp"><i class="fa fa-users fa-fw"></i> Solicitudes</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-users fa-fw"></i> Solicitudes</a>
                             <ul>
                                 <li><a href="SolicitudesCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="solicitudesListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
-                        <li><a class="btn btn-primary" href="cargosListar.jsp"><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
                             <ul>
                                 <li><a href="cargosCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
                                 <li><a href="cargosListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                            
-                        <li><a class="btn btn-primary" href="profesional.jsp"><i class="fa fa-user fa-fw"></i> Profesional</a>
-                        <li><a class="btn btn-primary" href="competencias.jsp"><i class="fa fa-user fa-fw"></i> Competencias</a>
                     </ul>
                 </div>
                 <section>

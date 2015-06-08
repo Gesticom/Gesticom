@@ -117,13 +117,13 @@
                                 <td><label for="Direccion">Dirección:</label>
                                 <td><input name="Direccion" id="Direccion" type="text"  required maxlength="45" tabindex="9">
                                 <td><label for="Ciudad">Ciudad:</label>
-                                <td><select name="Ciudad" tabindex="11">
+                                <td><select name="Ciudad" tabindex="10">
                                         <option value="1">Bogotá</option>
                                         <option value="2">Medellín</option>
                                         <option value="3">Cali</option>
                                 </select></td><tr>
                                 <td><label for="Cargo">Cargo:</label>
-                                <td><select name="Cargo" tabindex="12">
+                                <td><select name="Cargo" tabindex="11">
                                     <%
                                         CargosDAO ObjDaoCargo = new CargosDAO();
                                         ArrayList<CargosDTO> listadoCargo = new ArrayList<CargosDTO>();
@@ -137,7 +137,7 @@
                                     </select></td>
                                   </td>
                                 <td><label for="Role">Role:</label>
-                                <td><select name="Role" tabindex="13">
+                                <td><select name="Role" tabindex="12">
                                         <%
                                             RoleDAO ObjDaoRole = new RoleDAO();
                                             ArrayList<RoleDTO> listadoRole = new ArrayList<RoleDTO>();
@@ -152,16 +152,16 @@
                                <tr>
 
                             <td><label for="Usuario1">Usuario:</label>
-                            <td><input name="Usuario1" id="Usuario1" type="text"  required maxlength="45" tabindex="3">
+                            <td><input name="Usuario1" id="Usuario1" type="text"  required maxlength="45" tabindex="13">
 
                             <td><label for="Email">Email:</label>
-                            <td><input name="Email" id="Email" type="text" tabindex="13" required> </td><tr>
+                            <td><input name="Email" id="Email" type="text" tabindex="14" required> </td><tr>
 
                             <td><label for="clave">Digite la contraseña:</label>
-                            <td><input name="clave" id="clave" type="password" tabindex="13" required> </td>
+                            <td><input name="clave" id="clave" type="password" tabindex="15" required> </td>
 
                             <td><label for="Reclave">Repite la contraseña:</label>
-                            <td><input name="Reclave" id="reclave" type="password" tabindex="13" required> </td><tr>
+                            <td><input name="Reclave" id="reclave" type="password" tabindex="16" required> </td><tr>
 
 
                             </table>  
