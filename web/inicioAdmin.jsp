@@ -32,11 +32,9 @@
                 <div id="header">
                     <ul class="nav">
                         <!--  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a> -->
-                        <li><a class="btn btn-primary" href="usuariosListar.jsp"><i class="fa fa-user fa-fw"></i> Usuarios</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-user fa-fw"></i> Usuarios</a>
                             <ul>
                                 <li><a href="usuariosCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="usuariosListar.jsp"><i class="fa fa-pencil fa-fw"></i> Editar</a></li>
-                                <li><a href="usuariosListar.jsp"><i class="fa fa-trash-o fa-fw"></i> Borrar</a></li>
                                 <li><a href="usuariosListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
@@ -47,20 +45,22 @@
                                 <li><a href="ciudadesCargar.jsp"><i class="fa fa-file-text-o fa-fw"></i>Cargar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="campanasListar.jsp"><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-briefcase fa-fw"></i> Campañas</a>
                             <ul>
                                 <li><a href="campanasCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="campanasListar.jsp"><i class="fa fa-pencil fa-fw"></i> Editar</a></li>
-                                <li><a href="campanasListar.jsp"><i class="fa fa-trash-o fa-fw"></i> Borrar</a></li>
                                 <li><a href="campanasListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
                             </ul>
                         </li>
-                        <li><a class="btn btn-primary" href="cargosListar.jsp"><i class="fa fa-briefcase fa-fw"></i> Cargos</a>
+                        <li><a class="btn btn-primary" ><i class="fa fa-briefcase fa-fw"></i> Cargos</a>
                             <ul>
                                 <li><a href="cargosCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Crear</a></li>
-                                <li><a href="cargosEditar.jsp"><i class="fa fa-pencil fa-fw"></i> Editar</a></li>
-                                <li><a href="cargosBorrar.jsp"><i class="fa fa-trash-o fa-fw"></i> Borrar</a></li>
                                 <li><a href="cargosListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Listar</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="btn btn-primary" ><i class="fa fa-briefcase fa-fw"></i> Reportes</a>
+                            <ul>
+                                <li><a href="cargosCrear.jsp"><i class="fa fa-file-o fa-fw"></i> Campañas</a></li>
+                                <li><a href="cargosListar.jsp"><i class="fa fa-file-text-o fa-fw"></i> Usuarios</a></li>
                             </ul>
                         </li>
                 </ul>
